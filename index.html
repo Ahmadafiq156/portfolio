@@ -4,41 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Digital Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+    header, nav, footer {
+      background-color: #002b5c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin: 1rem 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <nav>
-      <div class="logo">My Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#academic">Academic</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#freelance">Freelance</a></li>
-        <li><a href="#qualities">Qualities</a></li>
-        <li><a href="#blog">Blog</a></li>
-      </ul>
-    </nav>
+    <h1>My Digital Portfolio</h1>
+    <p>Designed with HCI principles and creativity</p>
   </header>
 
-  <section id="home" class="section">
-    <div class="intro">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
-      <h1>Hello, I'm [Your Name]</h1>
-      <p>Welcome to my digital portfolio!</p>
-      <div class="contact-icons">
-        <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
-        <a href="#"><img src="github.svg" alt="GitHub" /></a>
-        <a href="mailto:you@example.com"><img src="email.svg" alt="Email" /></a>
+  <nav>
+    <a href="#personal">Personal Info</a>
+    <a href="#academic">Academic</a>
+    <a href="#works">Work</a>
+    <a href="#qualities">Qualities</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="personal">
+    <div class="card">
+      <h2>Personal Details</h2>
+      <p><strong>Name:</strong> Ahmad Afiq bin Abdul Haris</p>
+      <p><strong>Date of Birth:</strong> 15/06/2002</p>
+      <p><strong>Nationality:</strong> Malaysian</p>
+      <p><strong>Languages:</strong> English, Bahasa Malaysia</p>
+    </div>
+  </section>
+
+  <section id="academic">
+    <div class="card">
+      <h2>Academic History</h2>
+      <ul>
+        <li><strong>UTeM</strong> - Bachelor in Information Technology (Game Technology), 2023</li>
+        <li><strong>KUIS</strong> - Diploma in Science Computer, 2020</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="card">
+      <h2>My Projects</h2>
+      <div class="grid">
+        <div><img src="project1.png" width="100%" /><p>System myIMMs: Software Tester</p></div>
+        <div><img src="project2.png" width="100%" /><p>Project 2: [Title]</p></div>
+        <div><img src="freelance1.png" width="100%" /><p>Freelance Project: [Title]</p></div>
       </div>
-      <a href="resume.pdf" class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="qualities">
+    <div class="card">
+      <h2>Personal Qualities</h2>
+      <ul>
+        <li>Creative and detail-oriented</li>
+        <li>Excellent in team collaboration</li>
+        <li>Fast learner and adaptable</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card">
+      <h2>Contact Me</h2>
+      <p>Email: ahmadafiq1506@gmail.com</p>
+      <p>Phone: +60-13-6666964</p>
+      <p>LinkedIn: https://www.linkedin.com/in/ahmad-afiq-4478bb367</p>
+      <p>GitHub: https://github.com/Ahmadafiq156</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    <p>© Ahmad Afiq | UTeM Digital Portfolio</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
