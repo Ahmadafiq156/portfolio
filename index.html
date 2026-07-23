@@ -3,128 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad Afiq | Game Technology & Software Showcase</title>
+    <title>Ahmad Afiq | Game Technology & Software Developer</title>
     
     <!-- Tab Logo (Favicon) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2318181b'/><path d='M30 40h40M50 30v40' stroke='%23f59e0b' stroke-width='8' stroke-linecap='round'/><circle cx='35' cy='65' r='5' fill='%23f59e0b'/><circle cx='65' cy='65' r='5' fill='%23f59e0b'/></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230f172a'/><path d='M30 40h40M50 30v40' stroke='%2338bdf8' stroke-width='8' stroke-linecap='round'/><circle cx='35' cy='65' r='5' fill='%23818cf8'/><circle cx='65' cy='65' r='5' fill='%23818cf8'/></svg>">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <!-- Google Fonts: Space Grotesk & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
         .font-heading { font-family: 'Space Grotesk', sans-serif; }
-        .studio-mesh {
-            background-color: #09090b;
+        
+        /* Animated Background Gradients */
+        .bg-mesh {
+            background-color: #030712;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.04) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
         }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #38bdf8; }
     </style>
 </head>
-<body class="studio-mesh text-zinc-300 antialiased selection:bg-amber-500 selection:text-zinc-950 min-h-screen">
+<body class="bg-mesh text-slate-300 antialiased selection:bg-sky-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
+
+    <!-- Ambient Floating Orbs -->
+    <div class="fixed top-1/4 -left-32 w-96 h-96 bg-sky-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-1/4 -right-32 w-96 h-96 bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" style="animation-delay: 2s;"></div>
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-xl z-50 border-b border-zinc-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-18 flex items-center justify-between">
-            <a href="#" class="font-heading font-bold text-xl tracking-tight text-white flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-                <span>AHMAD AFIQ</span>
+    <nav class="fixed top-0 left-0 w-full bg-[#030712]/80 backdrop-blur-xl z-50 border-b border-slate-800/80 transition-all">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-heading font-bold text-xl tracking-tight text-white flex items-center gap-2 group">
+                <span class="w-3 h-3 rounded-full bg-sky-400 group-hover:scale-125 transition-transform"></span>
+                <span class="bg-gradient-to-r from-white via-slate-200 to-sky-400 bg-clip-text text-transparent">AFIQ.DEV</span>
             </a>
-            <div class="flex items-center space-x-8 text-xs font-semibold tracking-wider uppercase text-zinc-400">
-                <a href="#about" class="hover:text-amber-400 transition-colors hidden sm:inline">About</a>
-                <a href="#skills" class="hover:text-amber-400 transition-colors hidden sm:inline">Skills</a>
-                <a href="#projects" class="hover:text-amber-400 transition-colors">Projects</a>
-                <a href="#education" class="hover:text-amber-400 transition-colors hidden sm:inline">Education</a>
-                <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#education" class="hover:text-sky-400 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
                 
-                <!-- Resume Direct Button -->
-                <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold rounded-full transition-all shadow-md shadow-amber-500/10 text-xs flex items-center gap-1.5 lowercase">
-                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i> cv.pdf
+                <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-4 py-2 bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-300 hover:to-indigo-400 text-slate-950 font-bold rounded-full transition-all shadow-md shadow-sky-500/20 text-xs flex items-center gap-1.5 hover:scale-105 active:scale-95">
+                    <i data-lucide="file-down" class="w-3.5 h-3.5"></i> Resume.pdf
                 </a>
             </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 border-b border-slate-800 px-6 py-4 space-y-3 font-semibold text-sm">
+            <a href="#about" class="block text-slate-300 hover:text-sky-400 py-1">About</a>
+            <a href="#skills" class="block text-slate-300 hover:text-sky-400 py-1">Skills</a>
+            <a href="#projects" class="block text-slate-300 hover:text-sky-400 py-1">Projects</a>
+            <a href="#education" class="block text-slate-300 hover:text-sky-400 py-1">Education</a>
+            <a href="#contact" class="block text-slate-300 hover:text-sky-400 py-1">Contact</a>
+            <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-sky-400 text-slate-950 font-bold rounded-lg text-xs mt-2">
+                <i data-lucide="file-down" class="w-4 h-4"></i> Download CV
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section (Equal Height Image Layout) -->
-    <section class="pt-36 pb-20 md:pt-44 md:pb-28 max-w-6xl mx-auto px-6">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-28 max-w-6xl mx-auto px-6">
         <div class="flex flex-col-reverse md:flex-row items-stretch justify-between gap-12">
             
-            <!-- Left Column: Biography & Actions -->
+            <!-- Left Column: Intro -->
             <div class="max-w-2xl flex flex-col justify-center">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-amber-400 text-xs font-medium mb-6 w-fit">
-                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-                    <span>Available for Internship & Tech Placement</span>
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-sky-950/60 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-6 w-fit shadow-inner">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                    </span>
+                    <span>Ready for Internship & Tech Roles</span>
                 </div>
                 
-                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                    Interactive Tech & <br>
-                    <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-orange-400 bg-clip-text text-transparent">
-                        Game Systems Developer
+                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+                    Hi, I'm Ahmad Afiq. <br>
+                    <span class="bg-gradient-to-r from-sky-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
+                        Game Tech & IT Developer
                     </span>
                 </h1>
                 
-                <p class="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed font-normal">
-                    Information Technology undergraduate at UTeM with comprehensive experience in Unity 3D/2D game development, C# scripting, PHP backends, and relational MySQL databases. Engineering functional simulation environments and full-stack software.
+                <p class="text-slate-400 text-base md:text-lg mb-8 leading-relaxed font-light">
+                    UTeM Information Technology undergraduate specializing in Unity 3D/2D game systems, C# scripting, PHP backends, and relational MySQL databases. Building interactive simulations, mechanics, and enterprise software.
                 </p>
 
                 <div class="flex flex-wrap gap-4 mt-auto">
-                    <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-7 py-3.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center gap-2 text-sm">
-                        Download Resume / CV <i data-lucide="download" class="w-4 h-4"></i>
+                    <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-6 py-3.5 bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-300 hover:to-indigo-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-sky-500/20 flex items-center gap-2 text-sm hover:-translate-y-0.5 active:translate-y-0">
+                        Download CV / Resume <i data-lucide="download" class="w-4 h-4"></i>
                     </a>
-                    <a href="mailto:ahmadafiq1506@gmail.com" class="px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 font-semibold rounded-xl transition-all flex items-center gap-2 text-sm">
-                        Email Me <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+                    <a href="mailto:ahmadafiq1506@gmail.com" class="px-6 py-3.5 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold rounded-xl transition-all flex items-center gap-2 text-sm hover:-translate-y-0.5">
+                        Email Me <i data-lucide="mail" class="w-4 h-4 text-sky-400"></i>
                     </a>
-                    <a href="https://github.com/Ahmadafiq156" target="_blank" class="px-6 py-3.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 font-semibold rounded-xl transition-all flex items-center gap-2 text-sm">
-                        GitHub <i data-lucide="github" class="w-4 h-4 text-amber-400"></i>
+                    <a href="https://github.com/Ahmadafiq156" target="_blank" class="px-6 py-3.5 bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700/80 font-semibold rounded-xl transition-all flex items-center gap-2 text-sm hover:-translate-y-0.5">
+                        GitHub <i data-lucide="github" class="w-4 h-4 text-indigo-400"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Right Column: Equal Height Portrait -->
             <div class="relative shrink-0 w-full md:w-80 flex flex-col">
-                <div class="w-full h-80 md:h-full rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900/80 shadow-2xl relative group">
-                    <img src="gambo.png" alt="Ahmad Afiq" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" onError="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ahmad+Afiq&background=18181b&color=f59e0b&size=512';">
-                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+                <div class="w-full h-80 md:h-full rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-900/80 shadow-2xl relative group">
+                    <img src="gambo.png" alt="Ahmad Afiq" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" onError="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ahmad+Afiq&background=0f172a&color=38bdf8&size=512';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60"></div>
                 </div>
-                <!-- Ambient Subtle Glow -->
-                <div class="absolute -inset-1 bg-amber-500/10 rounded-3xl blur-xl -z-10 group-hover:bg-amber-500/20 transition-all"></div>
+                <!-- Glowing Trim -->
+                <div class="absolute -inset-0.5 bg-gradient-to-b from-sky-500 to-indigo-600 rounded-3xl blur opacity-20 -z-10 group-hover:opacity-40 transition-opacity"></div>
             </div>
 
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 border-t border-zinc-800/80 bg-zinc-950/40">
+    <section id="about" class="py-20 border-t border-slate-800/60 bg-slate-950/40">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12">
-                <div class="md:col-span-2 space-y-5 text-zinc-400 leading-relaxed font-normal">
-                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Summary & Expertise</h2>
+                <div class="md:col-span-2 space-y-5 text-slate-400 leading-relaxed font-light">
+                    <div class="flex items-center gap-2 text-sky-400 font-semibold text-xs uppercase tracking-widest mb-1">
+                        <i data-lucide="user" class="w-4 h-4"></i> Profile Breakdown
+                    </div>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Summary & Practical Focus</h2>
                     <p>
-                        I specialize in bridging interactive creative design with robust backend scripting. From setting up state controllers, collision matrices, and hazard inspection frameworks in Unity to organizing relational MySQL database logic for web applications, I focus on software that is structurally sound and intuitive.
+                        I bridge interactive visual design with clean OOP architecture. From configuring hazard detection state loops, UI canvas events, and collision matrices inside Unity to setting up user authentication and database CRUD pipelines in PHP/MySQL, I build complete systems from concept to release.
                     </p>
                     <p>
-                        Having completed both a Diploma in Computer Science and currently finishing a Bachelor of IT (Game Technology), I am equipped to handle multidisciplinary technical tasks across software development, game engineering, and IT execution.
+                        Having completed a Diploma in Computer Science and currently completing my Degree in Game Technology, I am versatile across software engineering, game scripting, web development, and QA testing.
                     </p>
                 </div>
                 
-                <div class="bg-zinc-900/90 border border-zinc-800/90 rounded-2xl p-6 flex flex-col justify-between">
+                <!-- Role Badges Box -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-3 block">Placement Focus</span>
-                        <h3 class="font-heading text-lg font-bold text-white mb-4">Targeted Professional Roles</h3>
-                        <ul class="space-y-2.5 text-xs text-zinc-300 font-medium">
-                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Unity / Game Developer</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> C# / Software Engineer</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> Web / Database Developer</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> QA / Game Tester</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-500"></i> IT / System Executive</li>
-                        </ul>
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-400 mb-3 block">Internship Target</span>
+                        <h3 class="font-heading text-lg font-bold text-white mb-4">Seeking Roles As:</h3>
+                        <div class="flex flex-wrap gap-2 text-xs">
+                            <span class="px-3 py-1.5 bg-slate-900 border border-slate-700/80 rounded-lg text-slate-300 font-medium hover:border-sky-400/50 transition-colors">Unity / Game Dev</span>
+                            <span class="px-3 py-1.5 bg-slate-900 border border-slate-700/80 rounded-lg text-slate-300 font-medium hover:border-sky-400/50 transition-colors">Software Engineer</span>
+                            <span class="px-3 py-1.5 bg-slate-900 border border-slate-700/80 rounded-lg text-slate-300 font-medium hover:border-sky-400/50 transition-colors">Full-Stack Web Dev</span>
+                            <span class="px-3 py-1.5 bg-slate-900 border border-slate-700/80 rounded-lg text-slate-300 font-medium hover:border-sky-400/50 transition-colors">QA / Game Tester</span>
+                            <span class="px-3 py-1.5 bg-slate-900 border border-slate-700/80 rounded-lg text-slate-300 font-medium hover:border-sky-400/50 transition-colors">IT System Executive</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,56 +184,56 @@
     </section>
 
     <!-- Technical Skills Section -->
-    <section id="skills" class="py-20 border-t border-zinc-800/80">
+    <section id="skills" class="py-20 border-t border-slate-800/60">
         <div class="max-w-6xl mx-auto px-6">
             <div class="mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Capabilities</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400 block mb-2">Skillset</span>
                 <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Technical Toolkit</h2>
             </div>
 
             <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-7 rounded-2xl hover:border-amber-500/40 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                <!-- Skill 1 -->
+                <div class="glass-card p-7 rounded-2xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="gamepad-2" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-heading font-bold text-white text-lg mb-3">Game Tech & Sims</h3>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li>• Unity Engine (3D & 2D Architecture)</li>
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <li>• Unity Engine (3D & 2D)</li>
                         <li>• C# Gameplay & OOP Scripting</li>
                         <li>• Custom UI & Level Design</li>
-                        <li>• Physics, AI & Collision State Loops</li>
-                        <li>• Interactive Simulation Systems</li>
+                        <li>• Enemy AI & Physics Matrices</li>
+                        <li>• Interactive TVET Simulators</li>
                     </ul>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-7 rounded-2xl hover:border-amber-500/40 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="layers" class="w-6 h-6"></i>
+                <!-- Skill 2 -->
+                <div class="glass-card p-7 rounded-2xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code" class="w-6 h-6"></i>
                     </div>
                     <h3 class="font-heading font-bold text-white text-lg mb-3">Software & Web</h3>
-                    <ul class="space-y-2 text-sm text-zinc-400">
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
                         <li>• C#, PHP, SQL, HTML, CSS</li>
                         <li>• JavaScript & Python (Basic)</li>
-                        <li>• MySQL Database Design & CRUD</li>
-                        <li>• User Authentication & Web Logics</li>
-                        <li>• System Architecture & Workflows</li>
+                        <li>• MySQL Database Architecture</li>
+                        <li>• Authentication & CRUD Logics</li>
+                        <li>• E-Commerce Web Platforms</li>
                     </ul>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="bg-zinc-900/50 border border-zinc-800/80 p-7 rounded-2xl hover:border-amber-500/40 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                <!-- Skill 3 -->
+                <div class="glass-card p-7 rounded-2xl transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                         <i data-lucide="wrench" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-white text-lg mb-3">Tools & Execution</h3>
-                    <ul class="space-y-2 text-sm text-zinc-400">
-                        <li>• Visual Studio & VS Code</li>
-                        <li>• Git / GitHub & XAMPP</li>
-                        <li>• Analytical Problem Solving</li>
-                        <li>• Team Leadership & Collaboration</li>
-                        <li>• Technical System Documentation</li>
+                    <h3 class="font-heading font-bold text-white text-lg mb-3">Tools & Methods</h3>
+                    <ul class="space-y-2 text-sm text-slate-400 font-light">
+                        <li>• Visual Studio, VS Code</li>
+                        <li>• Git, GitHub & XAMPP</li>
+                        <li>• Analytical Debugging</li>
+                        <li>• Presentation & Leadership</li>
+                        <li>• System Documentation</li>
                     </ul>
                 </div>
             </div>
@@ -189,307 +241,309 @@
     </section>
 
     <!-- Projects Portfolio Section -->
-    <section id="projects" class="py-20 border-t border-zinc-800/80 bg-zinc-950/30">
+    <section id="projects" class="py-20 border-t border-slate-800/60 bg-slate-950/20">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Work Showcase</span>
-                <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-400 block mb-2">Portfolio</span>
+                    <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Featured Projects</h2>
+                </div>
+
+                <!-- Interactive Category Filter Buttons -->
+                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-lg bg-sky-400 text-slate-950 transition-all" data-filter="all">All Work</button>
+                    <button onclick="filterProjects('game')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-filter="game">Games & Sims</button>
+                    <button onclick="filterProjects('web')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-filter="web">Web & Software</button>
+                    <button onclick="filterProjects('video')" class="filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-all" data-filter="video">Video Editing</button>
+                </div>
             </div>
 
-            <!-- Games & Sims Category -->
-            <h3 class="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-6 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Interactive Simulations & Game Projects
-            </h3>
-            
-            <div class="space-y-10 mb-16">
+            <!-- Projects Grid Container -->
+            <div class="space-y-8" id="projects-container">
+                
                 <!-- Project 1: PSM -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 hover:border-zinc-700 transition-all">
-                    <div class="bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 min-h-[220px]">
+                <div class="project-card game glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 transition-all duration-300">
+                    <div class="bg-slate-950 rounded-xl overflow-hidden border border-slate-800 min-h-[220px]">
                         <img src="psm.png" alt="Construction Safety Simulation" class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <h4 class="font-heading text-xl font-bold text-white">Construction Safety Training Simulation</h4>
-                                <span class="text-xs bg-amber-500/10 text-amber-400 font-semibold px-2.5 py-1 rounded-full border border-amber-500/20">Final Year Project</span>
+                                <span class="text-xs bg-sky-500/10 text-sky-400 font-semibold px-2.5 py-1 rounded-full border border-sky-500/20">Final Year Project</span>
                             </div>
-                            <p class="text-xs text-amber-400/90 font-semibold mb-3">Solo Developer | UTeM</p>
-                            <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+                            <p class="text-xs text-sky-400 font-semibold mb-3">Solo Developer | UTeM</p>
+                            <p class="text-sm text-slate-400 leading-relaxed font-light">
                                 Built a 3D Unity simulation to train construction safety awareness. Developed PPE inspection, hazard identification, inventory, interaction, and risk assessment systems independently.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-zinc-400 mt-6">
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">Unity 3D</span>
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">C# Scripting</span>
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">Hazard Systems</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-400 mt-6">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">Unity 3D</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">C# Scripting</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">Hazard Systems</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2: Eco-Tech -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 hover:border-zinc-700 transition-all">
-                    <div class="bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 min-h-[220px]">
+                <div class="project-card game glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 transition-all duration-300">
+                    <div class="bg-slate-950 rounded-xl overflow-hidden border border-slate-800 min-h-[220px]">
                         <img src="eco-tech.png" alt="Eco-Tech Simulator" class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <h4 class="font-heading text-xl font-bold text-white">Eco-Tech Simulator</h4>
-                                <span class="text-xs bg-zinc-800 text-zinc-300 font-semibold px-2.5 py-1 rounded-full">TVET Simulation</span>
+                                <span class="text-xs bg-indigo-500/10 text-indigo-400 font-semibold px-2.5 py-1 rounded-full border border-indigo-500/20">TVET Simulation</span>
                             </div>
-                            <p class="text-xs text-amber-400/90 font-semibold mb-3">Simulation Contributor</p>
-                            <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+                            <p class="text-xs text-indigo-400 font-semibold mb-3">Simulation Contributor</p>
+                            <p class="text-sm text-slate-400 leading-relaxed font-light">
                                 Educational simulation for TVET engineering training focusing on an Advanced Electronics Repair Workshop. Assisted with gameplay implementation, triggers, and system testing.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-zinc-400 mt-6">
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">TVET Engineering</span>
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">Workshop Logic</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-400 mt-6">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">TVET Engineering</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">Workshop Logic</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3: Sneak Out -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 hover:border-zinc-700 transition-all">
-                    <div class="bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 min-h-[220px]">
+                <div class="project-card game glass-card rounded-2xl overflow-hidden grid md:grid-cols-2 gap-8 p-6 transition-all duration-300">
+                    <div class="bg-slate-950 rounded-xl overflow-hidden border border-slate-800 min-h-[220px]">
                         <img src="workshop2.webp" alt="Sneak Out" class="w-full h-full object-cover">
                     </div>
                     <div class="flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
                                 <h4 class="font-heading text-xl font-bold text-white">Sneak Out</h4>
-                                <span class="text-xs bg-zinc-800 text-zinc-300 font-semibold px-2.5 py-1 rounded-full">Workshop II</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 font-semibold px-2.5 py-1 rounded-full">Workshop II</span>
                             </div>
-                            <p class="text-xs text-amber-400/90 font-semibold mb-3">Game Artist & Designer</p>
-                            <p class="text-sm text-zinc-400 leading-relaxed font-normal">
+                            <p class="text-xs text-sky-400 font-semibold mb-3">Game Artist & Designer</p>
+                            <p class="text-sm text-slate-400 leading-relaxed font-light">
                                 Collaborative team project. Designed game assets, overall gameplay concepts, character aesthetics, and strategic level layouts.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-2 text-xs font-medium text-zinc-400 mt-6">
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">Game Art</span>
-                            <span class="bg-zinc-950 border border-zinc-800 px-3 py-1 rounded-md">Level Design</span>
+                        <div class="flex flex-wrap gap-2 text-xs font-medium text-slate-400 mt-6">
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">Game Art</span>
+                            <span class="bg-slate-900 border border-slate-800 px-3 py-1 rounded-md">Level Design</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Smaller Game Grid -->
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-zinc-900/60 border border-zinc-800/90 p-6 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="bg-zinc-950 rounded-xl h-44 overflow-hidden mb-4 border border-zinc-800">
-                                <img src="shadow-escape.png" alt="Shadow Escape" class="w-full h-full object-cover">
-                            </div>
-                            <h4 class="font-heading text-lg font-bold text-white">Shadow Escape</h4>
-                            <p class="text-xs text-amber-400 font-semibold mb-2">Solo Developer</p>
-                            <p class="text-sm text-zinc-400">Developed a complete Unity game featuring fluid player movement, enemy AI logic, custom UI, and gameplay mechanics.</p>
-                        </div>
-                        <div class="flex gap-2 text-xs font-medium text-zinc-400 mt-4"><span class="bg-zinc-950 border border-zinc-800 px-2.5 py-1 rounded-md">Enemy AI</span></div>
-                    </div>
-
-                    <div class="bg-zinc-900/60 border border-zinc-800/90 p-6 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="bg-zinc-950 rounded-xl h-44 overflow-hidden mb-4 border border-zinc-800">
-                                <img src="rooftop-runner.png" alt="Rooftop Runner" class="w-full h-full object-cover">
-                            </div>
-                            <h4 class="font-heading text-lg font-bold text-white">Rooftop Runner</h4>
-                            <p class="text-xs text-amber-400 font-semibold mb-2">Solo Developer</p>
-                            <p class="text-sm text-zinc-400">Created a 3D endless runner featuring dynamic obstacle spawning, real-time score tracking, and collision detection.</p>
-                        </div>
-                        <div class="flex gap-2 text-xs font-medium text-zinc-400 mt-4"><span class="bg-zinc-950 border border-zinc-800 px-2.5 py-1 rounded-md">Endless Spawning</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web & Software Category -->
-            <h3 class="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-6 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Enterprise Software & Web Applications
-            </h3>
-
-            <div class="space-y-6 mb-16">
-                <!-- Shopping Portal -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl p-6 grid md:grid-cols-3 gap-6">
-                    <div class="bg-zinc-950 rounded-xl min-h-[140px] overflow-hidden border border-zinc-800 md:col-span-1">
+                <!-- Web Projects -->
+                <div class="project-card web glass-card rounded-2xl p-6 grid md:grid-cols-3 gap-6 transition-all duration-300">
+                    <div class="bg-slate-950 rounded-xl min-h-[140px] overflow-hidden border border-slate-800 md:col-span-1">
                         <img src="fyp.png" alt="Shopping Portal" class="w-full h-full object-cover">
                     </div>
                     <div class="md:col-span-2 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <h4 class="font-heading text-lg font-bold text-white">Integrated Online Shopping Portal</h4>
-                                <span class="text-xs bg-zinc-800 text-zinc-300 font-semibold px-2.5 py-0.5 rounded-full">KUIS Diploma FYP</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 font-semibold px-2.5 py-0.5 rounded-full">KUIS Diploma FYP</span>
                             </div>
-                            <p class="text-sm text-zinc-400 leading-relaxed">
+                            <p class="text-sm text-slate-400 leading-relaxed font-light">
                                 Built a complete e-commerce web platform featuring user authentication, product management, shopping cart functionality, checkout processing, and a structured MySQL database.
                             </p>
                         </div>
-                        <div class="flex gap-2 text-xs font-medium text-zinc-400 mt-4"><span class="bg-zinc-950 border border-zinc-800 px-2.5 py-1 rounded-md">PHP</span><span class="bg-zinc-950 border border-zinc-800 px-2.5 py-1 rounded-md">MySQL</span></div>
+                        <div class="flex gap-2 text-xs font-medium text-slate-400 mt-4"><span class="bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">PHP</span><span class="bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">MySQL</span></div>
                     </div>
                 </div>
 
-                <!-- Restaurant System -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl p-6 grid md:grid-cols-3 gap-6">
-                    <div class="bg-zinc-950 rounded-xl min-h-[140px] overflow-hidden border border-zinc-800 md:col-span-1">
+                <div class="project-card web glass-card rounded-2xl p-6 grid md:grid-cols-3 gap-6 transition-all duration-300">
+                    <div class="bg-slate-950 rounded-xl min-h-[140px] overflow-hidden border border-slate-800 md:col-span-1">
                         <img src="workshop1.png" alt="Restaurant System" class="w-full h-full object-cover">
                     </div>
                     <div class="md:col-span-2 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-2">
                                 <h4 class="font-heading text-lg font-bold text-white">Restaurant Ordering System</h4>
-                                <span class="text-xs bg-zinc-800 text-zinc-300 font-semibold px-2.5 py-0.5 rounded-full">UTeM Workshop I</span>
+                                <span class="text-xs bg-slate-800 text-slate-300 font-semibold px-2.5 py-0.5 rounded-full">UTeM Workshop I</span>
                             </div>
-                            <p class="text-sm text-zinc-400 leading-relaxed">
+                            <p class="text-sm text-slate-400 leading-relaxed font-light">
                                 Solo build developing a restaurant ordering system complete with menu browsing, order placement workflows, and database integration functionality.
                             </p>
                         </div>
-                        <div class="flex gap-2 text-xs font-medium text-zinc-400 mt-4"><span class="bg-zinc-950 border border-zinc-800 px-2.5 py-1 rounded-md">Database CRUD</span></div>
+                        <div class="flex gap-2 text-xs font-medium text-slate-400 mt-4"><span class="bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">Database CRUD</span></div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Video Production Category -->
-            <h3 class="text-sm font-bold uppercase tracking-wider text-zinc-400 mb-6 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Video Production & Motion Content
-            </h3>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Video 1 -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl p-5 flex flex-col justify-between">
-                    <div>
-                        <div class="rounded-xl aspect-video mb-4 relative overflow-hidden group cursor-pointer border border-zinc-800">
-                            <img src="https://img.youtube.com/vi/8B_SRydN_ME/hqdefault.jpg" alt="MISSION: DELIVERED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-zinc-950/50 group-hover:bg-zinc-950/30 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-amber-500 group-hover:scale-110 text-zinc-950 flex items-center justify-center shadow-lg transition-all">
-                                    <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                <!-- Video Category -->
+                <div class="project-card video grid md:grid-cols-2 gap-8 transition-all duration-300">
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="rounded-xl aspect-video mb-4 relative overflow-hidden group cursor-pointer border border-slate-800">
+                                <img src="https://img.youtube.com/vi/8B_SRydN_ME/hqdefault.jpg" alt="MISSION: DELIVERED" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-950/50 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-sky-400 group-hover:scale-110 text-slate-950 flex items-center justify-center shadow-lg transition-all">
+                                        <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                                    </div>
                                 </div>
+                                <a href="https://youtu.be/8B_SRydN_ME" target="_blank" class="absolute inset-0 z-10" aria-label="Play Mission Delivered on YouTube"></a>
                             </div>
-                            <a href="https://youtu.be/8B_SRydN_ME" target="_blank" class="absolute inset-0 z-10" aria-label="Play Mission Delivered on YouTube"></a>
+                            <h4 class="font-heading font-bold text-white">MISSION: DELIVERED</h4>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Short film production showcasing video editing, audio sync, narrative pacing, and timeline transitions.</p>
                         </div>
-                        <h4 class="font-heading font-bold text-white">MISSION: DELIVERED</h4>
-                        <p class="text-xs text-zinc-400 mt-2 font-normal">Short film production showcasing video editing, audio sync, narrative pacing, and timeline transitions.</p>
+                        <a href="https://youtu.be/8B_SRydN_ME" target="_blank" class="mt-4 px-4 py-2 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-slate-950 font-bold transition-all text-xs flex items-center justify-center gap-2 w-fit">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Watch Short Film
+                        </a>
                     </div>
-                    <a href="https://youtu.be/8B_SRydN_ME" target="_blank" class="mt-4 px-4 py-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg hover:bg-amber-500 hover:text-zinc-950 font-bold transition-all text-xs flex items-center justify-center gap-2 w-fit">
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Watch Short Film
-                    </a>
-                </div>
 
-                <!-- Video 2 -->
-                <div class="bg-zinc-900/60 border border-zinc-800/90 rounded-2xl p-5 flex flex-col justify-between">
-                    <div>
-                        <div class="rounded-xl aspect-video mb-4 relative overflow-hidden group cursor-pointer border border-zinc-800">
-                            <img src="https://img.youtube.com/vi/17cvcFdY01Q/hqdefault.jpg" alt="Kinetic Typography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-zinc-950/50 group-hover:bg-zinc-950/30 transition-colors flex items-center justify-center">
-                                <div class="w-12 h-12 rounded-full bg-amber-500 group-hover:scale-110 text-zinc-950 flex items-center justify-center shadow-lg transition-all">
-                                    <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                    <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="rounded-xl aspect-video mb-4 relative overflow-hidden group cursor-pointer border border-slate-800">
+                                <img src="https://img.youtube.com/vi/17cvcFdY01Q/hqdefault.jpg" alt="Kinetic Typography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-950/50 group-hover:bg-slate-950/30 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-sky-400 group-hover:scale-110 text-slate-950 flex items-center justify-center shadow-lg transition-all">
+                                        <i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>
+                                    </div>
                                 </div>
+                                <a href="https://youtu.be/17cvcFdY01Q" target="_blank" class="absolute inset-0 z-10" aria-label="Play Kinetic Typography on YouTube"></a>
                             </div>
-                            <a href="https://youtu.be/17cvcFdY01Q" target="_blank" class="absolute inset-0 z-10" aria-label="Play Kinetic Typography on YouTube"></a>
+                            <h4 class="font-heading font-bold text-white">Kinetic Typography Video</h4>
+                            <p class="text-xs text-slate-400 mt-2 font-light">Motion graphics video demonstration exploring kinetic text timing, animation syncing, and visual typography layout.</p>
                         </div>
-                        <h4 class="font-heading font-bold text-white">Kinetic Typography Video</h4>
-                        <p class="text-xs text-zinc-400 mt-2 font-normal">Motion graphics video demonstration exploring kinetic text timing, animation syncing, and visual typography layout.</p>
+                        <a href="https://youtu.be/17cvcFdY01Q" target="_blank" class="mt-4 px-4 py-2 bg-sky-500/10 border border-sky-500/20 text-sky-400 rounded-lg hover:bg-sky-400 hover:text-slate-950 font-bold transition-all text-xs flex items-center justify-center gap-2 w-fit">
+                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Watch Motion Graphics
+                        </a>
                     </div>
-                    <a href="https://youtu.be/17cvcFdY01Q" target="_blank" class="mt-4 px-4 py-2 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-lg hover:bg-amber-500 hover:text-zinc-950 font-bold transition-all text-xs flex items-center justify-center gap-2 w-fit">
-                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Watch Motion Graphics
-                    </a>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
     <!-- Education Timeline Section -->
-    <section id="education" class="py-20 border-t border-zinc-800/80">
+    <section id="education" class="py-20 border-t border-slate-800/60">
         <div class="max-w-6xl mx-auto px-6">
             <div class="mb-12">
-                <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Qualifications</span>
-                <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Academic History</h2>
+                <span class="text-xs font-bold uppercase tracking-widest text-sky-400 block mb-2">Academic Path</span>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-white tracking-tight">Educational History</h2>
             </div>
 
-            <div class="relative border-l border-zinc-800 ml-4 space-y-12">
+            <div class="relative border-l border-slate-800 ml-4 space-y-12">
                 <!-- UTeM -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-amber-500 w-4 h-4 rounded-full border-4 border-[#09090b]"></div>
-                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Degree Milestone</span>
+                    <div class="absolute -left-[9px] top-1.5 bg-sky-400 w-4 h-4 rounded-full border-4 border-[#030712]"></div>
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Bachelor's Degree</span>
                     <h3 class="font-heading text-lg font-bold text-white mt-1">Universiti Teknikal Malaysia Melaka (UTeM)</h3>
-                    <p class="text-sm text-zinc-400">Bachelor of Information Technology (Game Technology)</p>
-                    <p class="text-xs text-amber-300 font-bold mt-1 bg-amber-500/10 border border-amber-500/20 w-fit px-2.5 py-1 rounded-md">CGPA: 3.10</p>
+                    <p class="text-sm text-slate-400">Bachelor of Information Technology (Game Technology)</p>
+                    <p class="text-xs text-sky-300 font-bold mt-1 bg-sky-500/10 border border-sky-500/20 w-fit px-2.5 py-1 rounded-md">CGPA: 3.10</p>
                 </div>
 
                 <!-- KUIS -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-zinc-600 w-4 h-4 rounded-full border-4 border-[#09090b]"></div>
-                    <span class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Diploma Milestone</span>
+                    <div class="absolute -left-[9px] top-1.5 bg-indigo-400 w-4 h-4 rounded-full border-4 border-[#030712]"></div>
+                    <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Diploma Program</span>
                     <h3 class="font-heading text-lg font-bold text-white mt-1">Kolej Universiti Islam Antarabangsa Selangor (KUIS)</h3>
-                    <p class="text-sm text-zinc-400">Diploma in Computer Science</p>
-                    <p class="text-xs text-zinc-300 font-bold mt-1 bg-zinc-900 border border-zinc-800 w-fit px-2.5 py-1 rounded-md">CGPA: 3.68</p>
+                    <p class="text-sm text-slate-400">Diploma in Computer Science</p>
+                    <p class="text-xs text-indigo-300 font-bold mt-1 bg-indigo-500/10 border border-indigo-500/20 w-fit px-2.5 py-1 rounded-md">CGPA: 3.68</p>
                 </div>
 
                 <!-- SMA -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-zinc-800 w-4 h-4 rounded-full border-4 border-[#09090b]"></div>
-                    <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Religious Certificate</span>
+                    <div class="absolute -left-[9px] top-1.5 bg-slate-700 w-4 h-4 rounded-full border-4 border-[#030712]"></div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Religious Certificate</span>
                     <h3 class="font-heading text-lg font-bold text-white mt-1">SMA Kampung Laut</h3>
-                    <p class="text-sm text-zinc-400">Sijil Menengah Ugama (SMU)</p>
-                    <p class="text-xs text-zinc-400 mt-1">Results: 9 Mumtaz | 1 Jayyid Jiddan</p>
+                    <p class="text-sm text-slate-400">Sijil Menengah Ugama (SMU)</p>
+                    <p class="text-xs text-slate-400 mt-1">Results: 9 Mumtaz | 1 Jayyid Jiddan</p>
                 </div>
 
                 <!-- SMK -->
                 <div class="relative pl-8">
-                    <div class="absolute -left-[9px] top-1.5 bg-zinc-800 w-4 h-4 rounded-full border-4 border-[#09090b]"></div>
-                    <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider">Secondary Education</span>
+                    <div class="absolute -left-[9px] top-1.5 bg-slate-800 w-4 h-4 rounded-full border-4 border-[#030712]"></div>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Secondary Education</span>
                     <h3 class="font-heading text-lg font-bold text-white mt-1">SMK Tengku Intan Zaharah</h3>
-                    <p class="text-sm text-zinc-400">Sijil Pelajaran Malaysia (SPM)</p>
-                    <p class="text-xs text-zinc-500 mt-1">Grades: 3A | 3B | 1C | 2D | 2E</p>
+                    <p class="text-sm text-slate-400">Sijil Pelajaran Malaysia (SPM)</p>
+                    <p class="text-xs text-slate-500 mt-1">Grades: 3A | 3B | 1C | 2D | 2E</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact & Footer Section -->
-    <section id="contact" class="py-20 border-t border-zinc-800/80 bg-zinc-950">
+    <section id="contact" class="py-20 border-t border-slate-800/60 bg-slate-950">
         <div class="max-w-6xl mx-auto px-6 text-center">
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-2">Opportunities</span>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Let's Build Something Together</h2>
-            <p class="text-zinc-400 max-w-lg mx-auto mb-10 text-sm md:text-base font-normal leading-relaxed">
+            <span class="text-xs font-bold uppercase tracking-widest text-sky-400 block mb-2">Get In Touch</span>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Let's Connect</h2>
+            <p class="text-slate-400 max-w-lg mx-auto mb-10 text-sm md:text-base font-light leading-relaxed">
                 I am actively seeking internship placement or entry-level software/game development positions. Feel free to contact me directly!
             </p>
 
             <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <a href="mailto:ahmadafiq1506@gmail.com" class="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold rounded-xl transition-all shadow-lg shadow-amber-500/10 text-sm flex items-center gap-2">
+                <a href="mailto:ahmadafiq1506@gmail.com" class="px-6 py-3.5 bg-gradient-to-r from-sky-400 to-indigo-500 hover:from-sky-300 hover:to-indigo-400 text-slate-950 font-bold rounded-xl transition-all shadow-lg shadow-sky-500/10 text-sm flex items-center gap-2">
                     <i data-lucide="mail" class="w-4 h-4"></i> ahmadafiq1506@gmail.com
                 </a>
-                <span class="px-5 py-3.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-sm font-semibold rounded-xl flex items-center gap-2">
-                    <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i> +60 13-666 964
+                <span class="px-5 py-3.5 bg-slate-900 border border-slate-800 text-slate-300 text-sm font-semibold rounded-xl flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i> +60 13-666 964
                 </span>
-                <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-5 py-3.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-amber-400 text-sm font-semibold rounded-xl flex items-center gap-2 transition-colors">
+                <a href="Ahmad_Afiq_CV.pdf" target="_blank" class="px-5 py-3.5 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-sky-400 text-sm font-semibold rounded-xl flex items-center gap-2 transition-colors">
                     <i data-lucide="file-down" class="w-4 h-4"></i> View Resume PDF
                 </a>
             </div>
 
             <!-- Social Media Brand Icons -->
             <div class="flex justify-center gap-5 mb-12">
-                <a href="https://github.com/Ahmadafiq156" target="_blank" class="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/50 text-zinc-400 hover:text-amber-400 transition-all" title="GitHub">
+                <a href="https://github.com/Ahmadafiq156" target="_blank" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all" title="GitHub">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                 </a>
-                <a href="https://www.linkedin.com/in/ahmad-afiq-4478bb367/" target="_blank" class="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/50 text-zinc-400 hover:text-amber-400 transition-all" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/ahmad-afiq-4478bb367/" target="_blank" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all" title="LinkedIn">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-                <a href="https://www.youtube.com/@ahmadafiq6561" target="_blank" class="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/50 text-zinc-400 hover:text-amber-400 transition-all" title="YouTube">
+                <a href="https://www.youtube.com/@ahmadafiq6561" target="_blank" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all" title="YouTube">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
-                <a href="https://www.instagram.com/apeeeks_/" target="_blank" class="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/50 text-zinc-400 hover:text-amber-400 transition-all" title="Instagram">
+                <a href="https://www.instagram.com/apeeeks_/" target="_blank" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all" title="Instagram">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 </a>
-                <a href="https://www.tiktok.com/@cikgumlbb" target="_blank" class="p-3.5 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-amber-500/50 text-zinc-400 hover:text-amber-400 transition-all" title="TikTok">
+                <a href="https://www.tiktok.com/@cikgumlbb" target="_blank" class="p-3.5 bg-slate-900 border border-slate-800 rounded-xl hover:border-sky-500/50 text-slate-400 hover:text-sky-400 transition-all" title="TikTok">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31.02 2.61.1 3.91.24.08 1.55.77 2.99 1.94 4.01 1.15.99 2.65 1.52 4.19 1.5v3.42c-1.74-.03-3.44-.6-4.86-1.67-.35-.26-.67-.56-.96-.89V15c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c.42 0 .84.03 1.25.09v3.52c-.41-.11-.83-.16-1.25-.16-2.98 0-5.4 2.42-5.4 5.4s2.42 5.4 5.4 5.4 5.4-2.42 5.4-5.4V0h3.57z"/></svg>
                 </a>
             </div>
 
-            <p class="text-xs text-zinc-600 font-medium">&copy; 2026 Ahmad Afiq. Built for GitHub Pages.</p>
+            <p class="text-xs text-slate-600 font-medium">&copy; 2026 Ahmad Afiq. Built for GitHub Pages.</p>
         </div>
     </section>
 
-    <!-- Script to render Lucide Icons -->
+    <!-- Interactive Scripts -->
     <script>
+        // Render Icons
         lucide.createIcons();
+
+        // Mobile Menu Drawer Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Dynamic Filter Logic for Projects
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Style Active Filter Button
+            buttons.forEach(button => {
+                if (button.getAttribute('data-filter') === category) {
+                    button.className = "filter-btn active px-4 py-2 rounded-lg bg-sky-400 text-slate-950 font-semibold transition-all";
+                } else {
+                    button.className = "filter-btn px-4 py-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white font-semibold transition-all";
+                }
+            });
+
+            // Filter Visibility Animation
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'grid';
+                    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => { card.style.display = 'none'; }, 200);
+                }
+            });
+        }
     </script>
 </body>
 </html>
