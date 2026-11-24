@@ -1,0 +1,3107 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark" data-theme="glacier">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#04070d" />
+  <meta name="description" content="Ahmad Afiq (BITE, UTeM) — Multimedia & Web System Application Intern & Unity 6 Game Developer. Building production company websites, interactive web systems, and Unity simulations. Open for full-time roles starting April 2027." />
+  <link rel="canonical" href="https://ahmadafiq.me/" />
+  <meta property="og:url" content="https://ahmadafiq.me/" />
+  <meta property="og:title" content="Ahmad Afiq | Multimedia & Web System Intern & BITE Game Developer" />
+  <meta property="og:description" content="Portfolio of Ahmad Afiq (BITE, UTeM) — Multimedia & Web System Application Intern building production websites, interactive web systems, Unity 6 safety simulations, and creative digital media." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ahmadafiq.me/assets/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahmad Afiq | Multimedia & Web System Intern & BITE Game Developer" />
+  <meta name="twitter:description" content="Spatial Liquid Glassmorphism portfolio featuring production web systems, Unity 6 safety simulations, a playable mini-game, and in-page video showcase." />
+  <meta name="twitter:image" content="https://ahmadafiq.me/assets/og.png" />
+  <title>Ahmad Afiq | Spatial Web &amp; Game Developer</title>
+  <!-- Custom Inline SVG Favicon: Obsidian Glass Square + Cyan-to-Violet Border + Bold AA Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322d3ee'/%3E%3Cstop offset='50%25' stop-color='%2338bdf8'/%3E%3Cstop offset='100%25' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3CradialGradient id='glow' cx='30%25' cy='25%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%2322d3ee' stop-opacity='0.32'/%3E%3Cstop offset='100%25' stop-color='%2304070d' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='60' height='60' rx='16' fill='%23050811' stroke='url(%23g)' stroke-width='3'/%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='url(%23glow)'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='800' font-size='26' letter-spacing='-1' fill='%23ffffff'%3EAA%3C/text%3E%3C/svg%3E" />
+
+  <!-- Crisp, Upright Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* =========================================================================
+       1. SPATIAL LIQUID GLASSMORPHISM THEME TOKENS
+       ========================================================================= */
+    :root,
+    [data-theme="glacier"] {
+      --bg-canvas: #04070d;
+      --orb-1: #22d3ee;
+      --orb-2: #38bdf8;
+      --orb-3: #6366f1;
+      --accent: #22d3ee;
+      --accent-2: #38bdf8;
+      --accent-rgb: 34, 211, 238;
+      --accent-2-rgb: 56, 189, 248;
+    }
+
+    [data-theme="nebula"] {
+      --bg-canvas: #060410;
+      --orb-1: #a855f7;
+      --orb-2: #6366f1;
+      --orb-3: #ec4899;
+      --accent: #a855f7;
+      --accent-2: #6366f1;
+      --accent-rgb: 168, 85, 247;
+      --accent-2-rgb: 99, 102, 241;
+    }
+
+    [data-theme="emerald"] {
+      --bg-canvas: #030a0a;
+      --orb-1: #10b981;
+      --orb-2: #14b8a6;
+      --orb-3: #06b6d4;
+      --accent: #10b981;
+      --accent-2: #14b8a6;
+      --accent-rgb: 16, 185, 129;
+      --accent-2-rgb: 20, 184, 166;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background-color: var(--bg-canvas);
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background-color: var(--bg-canvas);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.6s ease;
+    }
+
+    /* Tall, Upright, Modern Typography */
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .hero-h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.9rem, 6.4vw, 4.95rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+
+    .section-h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    ::selection {
+      background: rgba(var(--accent-rgb), 0.35);
+      color: #ffffff;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #04070d; }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(var(--accent-rgb), 0.55);
+    }
+
+    /* =========================================================================
+       2. LIVE SPATIAL AURORA MESH + INTERACTIVE CANVAS CONSTELLATION
+       ========================================================================= */
+    .aurora-stage {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .aurora-orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(125px);
+      opacity: 0.32;
+      will-change: transform;
+      transition: background 0.8s ease;
+    }
+
+    .aurora-orb-1 {
+      width: 55vw;
+      height: 55vw;
+      max-width: 780px;
+      max-height: 780px;
+      top: -18%;
+      left: -10%;
+      background: radial-gradient(circle, var(--orb-1) 0%, transparent 70%);
+      animation: driftOrb1 22s ease-in-out infinite alternate;
+    }
+
+    .aurora-orb-2 {
+      width: 52vw;
+      height: 52vw;
+      max-width: 720px;
+      max-height: 720px;
+      top: 20%;
+      right: -12%;
+      background: radial-gradient(circle, var(--orb-2) 0%, transparent 70%);
+      animation: driftOrb2 26s ease-in-out infinite alternate;
+    }
+
+    .aurora-orb-3 {
+      width: 48vw;
+      height: 48vw;
+      max-width: 690px;
+      max-height: 690px;
+      bottom: -18%;
+      left: 22%;
+      background: radial-gradient(circle, var(--orb-3) 0%, transparent 70%);
+      animation: driftOrb3 24s ease-in-out infinite alternate;
+    }
+
+    @keyframes driftOrb1 {
+      0%   { transform: translate3d(0, 0, 0) scale(1); }
+      50%  { transform: translate3d(7vw, 6vh, 0) scale(1.1); }
+      100% { transform: translate3d(3vw, 12vh, 0) scale(0.96); }
+    }
+    @keyframes driftOrb2 {
+      0%   { transform: translate3d(0, 0, 0) scale(1); }
+      50%  { transform: translate3d(-8vw, -7vh, 0) scale(1.08); }
+      100% { transform: translate3d(-4vw, 8vh, 0) scale(0.94); }
+    }
+    @keyframes driftOrb3 {
+      0%   { transform: translate3d(0, 0, 0) scale(1); }
+      50%  { transform: translate3d(-5vw, -10vh, 0) scale(1.12); }
+      100% { transform: translate3d(8vw, -4vh, 0) scale(0.98); }
+    }
+
+    #spatial-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .dot-matrix {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.2;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: radial-gradient(circle at 50% 30%, #000 18%, transparent 82%);
+    }
+
+    /* =========================================================================
+       3. SPECULAR LIQUID GLASS MATERIAL SYSTEM
+       ========================================================================= */
+    .glass-surface {
+      position: relative;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.024) 100%);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-top-color: rgba(255, 255, 255, 0.28);
+      border-left-color: rgba(255, 255, 255, 0.18);
+      box-shadow:
+        0 24px 58px -18px rgba(0, 0, 0, 0.72),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .glass-pill {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.095) 0%, rgba(255, 255, 255, 0.03) 100%);
+      backdrop-filter: blur(22px) saturate(165%);
+      -webkit-backdrop-filter: blur(22px) saturate(165%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-top-color: rgba(255, 255, 255, 0.3);
+      box-shadow:
+        0 14px 36px -10px rgba(0, 0, 0, 0.62),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .glass-card {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.072) 0%, rgba(255, 255, 255, 0.022) 100%);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-top-color: rgba(255, 255, 255, 0.25);
+      border-left-color: rgba(255, 255, 255, 0.16);
+      box-shadow:
+        0 22px 52px -18px rgba(0, 0, 0, 0.68),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+    }
+
+    /* Mouse-tracking radial spotlight glare */
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(
+        460px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(var(--accent-rgb), 0.16),
+        transparent 46%
+      );
+      opacity: 0;
+      transition: opacity 0.32s ease;
+      z-index: 1;
+    }
+
+    .glass-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      pointer-events: none;
+      background: radial-gradient(
+        280px circle at var(--mx, 50%) var(--my, 50%),
+        rgba(var(--accent-rgb), 0.82),
+        transparent 58%
+      );
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0;
+      transition: opacity 0.32s ease;
+      z-index: 2;
+    }
+
+    .glass-card:hover::before,
+    .glass-card:hover::after {
+      opacity: 1;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(var(--accent-rgb), 0.36);
+      box-shadow:
+        0 28px 64px -16px rgba(0, 0, 0, 0.78),
+        0 0 38px -12px rgba(var(--accent-rgb), 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .text-accent {
+      color: var(--accent);
+      transition: color 0.45s ease;
+    }
+
+    .bg-accent-glow {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      box-shadow: 0 10px 30px -6px rgba(var(--accent-rgb), 0.5);
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, filter 0.25s ease;
+    }
+    .bg-accent-glow:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 14px 38px -4px rgba(var(--accent-rgb), 0.7);
+    }
+
+    .badge-accent {
+      background: rgba(var(--accent-rgb), 0.13);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
+      color: var(--accent);
+    }
+
+    /* =========================================================================
+       4. 3D LAB, MINI-GAME, RADAR SCAN, VISIONOS BOTTOM DOCK, PORTRAIT
+       ========================================================================= */
+    .tilt-stage { perspective: 1200px; }
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.16s ease-out;
+      will-change: transform;
+    }
+    .tilt-sheen {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: inherit;
+      background: radial-gradient(
+        circle at var(--sx, 50%) var(--sy, 50%),
+        rgba(255, 255, 255, 0.22) 0%,
+        rgba(255, 255, 255, 0.04) 32%,
+        transparent 62%
+      );
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 20;
+    }
+    .tilt-card:hover .tilt-sheen { opacity: 1; }
+
+    /* Hazard Radar Sweep */
+    @keyframes radarSweep {
+      0%   { transform: translateX(-100%); opacity: 0; }
+      20%  { opacity: 1; }
+      80%  { opacity: 1; }
+      100% { transform: translateX(220%); opacity: 0; }
+    }
+    .radar-beam {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.38), rgba(var(--accent-rgb), 0.8), transparent);
+      pointer-events: none;
+      opacity: 0;
+    }
+    .radar-beam.scanning {
+      animation: radarSweep 0.95s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Mini-Game Cyber Orb */
+    @keyframes orbPopIn {
+      0%   { transform: translate(-50%, -50%) scale(0.2); opacity: 0; }
+      70%  { transform: translate(-50%, -50%) scale(1.12); opacity: 1; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+    @keyframes floatPop {
+      0%   { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+      100% { transform: translate(-50%, -140%) scale(1.15); opacity: 0; }
+    }
+    .cyber-orb {
+      position: absolute;
+      border-radius: 9999px;
+      cursor: pointer;
+      background: radial-gradient(circle at 32% 32%, #ffffff 0%, var(--accent) 42%, rgba(var(--accent-2-rgb), 0.85) 100%);
+      box-shadow: 0 0 24px rgba(var(--accent-rgb), 0.85), inset 0 0 10px rgba(255, 255, 255, 0.8);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      animation: orbPopIn 0.22s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      transition: transform 0.1s ease;
+    }
+    .cyber-orb:hover { transform: translate(-50%, -50%) scale(1.1); }
+    .cyber-orb:active { transform: translate(-50%, -50%) scale(0.85); }
+
+    .score-pop {
+      position: absolute;
+      pointer-events: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      text-shadow: 0 0 10px var(--accent);
+      animation: floatPop 0.6s ease-out forwards;
+    }
+
+    /* VisionOS Floating Bottom Dock */
+    .vision-dock {
+      transform: translate(-50%, 110px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+    }
+    .vision-dock.is-visible {
+      transform: translate(-50%, 0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .dock-item {
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, color 0.2s ease;
+    }
+    .dock-item:hover {
+      transform: translateY(-4px) scale(1.08);
+    }
+    .dock-tooltip {
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(4px);
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+    .dock-item:hover .dock-tooltip {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Studio Portrait & Parallax Float */
+    .studio-portrait-img {
+      transition: filter 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .studio-halo {
+      transition: background 0.55s ease, border-color 0.55s ease, box-shadow 0.55s ease;
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px); }
+      50%      { transform: translateY(-7px); }
+    }
+    .float-badge-1 { animation: floatSlow 5.2s ease-in-out infinite; }
+    .float-badge-2 { animation: floatSlow 6.2s ease-in-out infinite 1.1s; }
+
+    /* Architectural Preview Animation for Project 01 */
+    @keyframes archBreath {
+      0%, 100% { transform: scaleY(0.65); opacity: 0.75; }
+      50%      { transform: scaleY(1.05); opacity: 0.98; }
+    }
+    .arch-mini-slat {
+      animation: archBreath 4.6s ease-in-out infinite;
+    }
+
+    /* Skill Bar Fill */
+    .skill-fill {
+      width: 0%;
+      transition: width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Marquee, Role Swap, Modals, Toast, Reveal, Range */
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 32s linear infinite;
+    }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+    .role-swap {
+      display: inline-block;
+      transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .role-swap.out { opacity: 0; transform: translateY(-8px); }
+    .role-swap.in  { opacity: 0; transform: translateY(8px); }
+
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal-overlay {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-box {
+      opacity: 0;
+      transform: scale(0.96) translateY(12px);
+      transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .modal-overlay.is-open .modal-box {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    .toast-glass {
+      transform: translate(-50%, 24px);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    }
+    .toast-glass.is-visible {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    input[type="range"].glass-range {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      outline: none;
+    }
+    input[type="range"].glass-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.85);
+      cursor: pointer;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body class="relative min-h-screen antialiased pb-24 sm:pb-28">
+
+  <!-- ==================== LIVE SPATIAL AURORA + CANVAS ==================== -->
+  <div class="aurora-stage" aria-hidden="true">
+    <div class="aurora-orb aurora-orb-1"></div>
+    <div class="aurora-orb aurora-orb-2"></div>
+    <div class="aurora-orb aurora-orb-3"></div>
+  </div>
+  <canvas id="spatial-canvas" aria-hidden="true"></canvas>
+  <div class="dot-matrix" aria-hidden="true"></div>
+
+  <!-- Top Viewport Glowing Scroll Progress Bar -->
+  <div class="fixed top-0 left-0 right-0 h-[2.5px] z-[75] bg-white/5 pointer-events-none">
+    <div id="scroll-bar" class="h-full w-0 bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] shadow-[0_0_16px_var(--accent)]"></div>
+  </div>
+
+  <!-- ==================== FLOATING TOP GLASS NAVBAR ==================== -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-3 sm:px-6">
+    <div class="mx-auto max-w-6xl glass-pill rounded-full px-3 sm:px-5 py-2.5 flex items-center justify-between gap-2 sm:gap-3">
+      <!-- Brand -->
+      <a href="#home" class="flex items-center gap-2.5 pl-1 group focus:outline-none">
+        <span class="flex h-8 w-8 items-center justify-center rounded-full badge-accent font-mono text-xs font-bold transition group-hover:scale-105">
+          AA
+        </span>
+        <span class="font-heading text-base sm:text-lg font-bold tracking-tight text-white">
+          ahmad<span class="text-accent">afiq</span>
+        </span>
+      </a>
+
+      <!-- Center Nav Links (Desktop) -->
+      <nav class="hidden lg:flex items-center gap-1 rounded-full bg-white/[0.03] border border-white/[0.07] p-1" aria-label="Primary Navigation">
+        <a href="#home" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">Home</a>
+        <a href="#about" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">About</a>
+        <a href="#journey" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">Journey</a>
+        <a href="#projects" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">Projects</a>
+        <a href="#skills" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">Skills</a>
+        <a href="#contact" data-nav class="nav-pill rounded-full px-3 py-1.5 font-heading text-xs font-medium text-slate-300 transition hover:text-white">Contact</a>
+      </nav>
+
+      <!-- Right Controls: Theme Dot + Spatial SFX Toggle + Ctrl + K + Resume + Mobile -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
+        <!-- Theme Cycler -->
+        <button id="theme-cycle-btn" type="button" title="Switch Glass Theme" class="flex h-9 items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-2.5 sm:px-3 font-mono text-xs text-slate-200 transition hover:border-white/25 hover:bg-white/[0.09]">
+          <span class="h-2.5 w-2.5 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]"></span>
+          <span id="theme-name" class="hidden xl:inline">Glacier Cyan</span>
+        </button>
+
+        <!-- Web Audio Spatial SFX Toggle (Default OFF) -->
+        <button id="sfx-toggle-btn" type="button" title="Toggle Spatial Glass Sound Effects" aria-pressed="false" class="flex h-9 items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-2.5 sm:px-3 font-mono text-xs text-slate-400 transition hover:border-white/25 hover:text-white">
+          <svg id="sfx-icon-off" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+          <svg id="sfx-icon-on" class="hidden h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+          <span class="hidden sm:inline">SFX</span>
+        </button>
+
+        <!-- Command Palette Pill (Strictly Ctrl + K) -->
+        <button id="cmd-open-btn" type="button" title="Open Command Palette (Ctrl + K)" class="hidden sm:inline-flex h-9 items-center gap-1.5 rounded-full border border-white/12 bg-white/[0.04] px-3 font-mono text-xs text-slate-300 transition hover:border-white/25 hover:text-white">
+          <svg class="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" /></svg>
+          <span>Ctrl + K</span>
+        </button>
+
+        <!-- Resume CTA -->
+        <a href="Ahmad_Afiq_CV.pdf" target="_blank" rel="noreferrer" class="hidden md:inline-flex h-9 items-center gap-1.5 rounded-full bg-accent-glow px-4 font-heading text-xs font-bold text-slate-950">
+          <span>Resume</span>
+          <span>↗</span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false" class="inline-flex lg:hidden h-9 w-9 items-center justify-center rounded-full border border-white/12 bg-white/[0.05] text-slate-100">
+          <svg id="burger-open" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" /></svg>
+          <svg id="burger-close" class="hidden h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Frosted Glass Mobile Drawer -->
+    <div id="mobile-drawer" class="hidden lg:hidden mx-auto mt-2.5 max-w-6xl glass-surface rounded-3xl p-4">
+      <nav class="grid gap-1" aria-label="Mobile Navigation">
+        <a href="#home" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">Home</a>
+        <a href="#about" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">About</a>
+        <a href="#journey" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">Journey</a>
+        <a href="#projects" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">Projects</a>
+        <a href="#skills" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">Skills</a>
+        <a href="#contact" class="mobile-link rounded-2xl px-4 py-2.5 font-heading text-sm font-medium text-slate-200 hover:bg-white/[0.06] hover:text-accent">Contact</a>
+      </nav>
+      <div class="mt-3 flex items-center gap-2 border-t border-white/10 pt-3">
+        <button id="mobile-cmd-btn" type="button" class="flex-1 rounded-2xl border border-white/12 bg-white/[0.04] py-2.5 font-mono text-xs text-slate-200">
+          Command Palette (Ctrl + K)
+        </button>
+        <a href="Ahmad_Afiq_CV.pdf" target="_blank" rel="noreferrer" class="flex-1 rounded-2xl bg-accent-glow py-2.5 text-center font-heading text-xs font-bold text-slate-950">
+          Resume ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    <!-- ==================== HERO SECTION (2-COLUMN ASYMMETRIC SPLIT) ==================== -->
+    <section id="home" class="min-h-screen flex items-center pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <div class="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          <!-- Left Column: Identity, Status & Magnetic CTAs -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="inline-flex max-w-full items-center gap-2.5 glass-pill rounded-full px-4 py-2">
+              <span class="relative flex h-2.5 w-2.5 shrink-0">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+              </span>
+              <span class="truncate font-mono text-xs font-medium text-slate-200">
+                Interning Now · <span class="text-accent font-semibold">Open for Full-Time April 2027</span>
+              </span>
+            </div>
+
+            <div class="space-y-3">
+              <h1 class="hero-h1 text-white">
+                AHMAD <span class="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)] bg-clip-text text-transparent">AFIQ</span>
+              </h1>
+              <div class="flex items-center gap-2.5 min-h-[2.25rem]">
+                <span class="font-mono text-sm font-bold text-accent">&gt;_</span>
+                <p class="font-heading text-xl sm:text-2xl font-semibold text-slate-100">
+                  <span id="hero-role" class="role-swap">Multimedia &amp; Web System Developer</span>
+                </p>
+              </div>
+            </div>
+
+            <p class="max-w-xl text-[15px] sm:text-base leading-[1.72] text-slate-300">
+              Currently serving as a <strong class="text-white font-semibold">Multimedia &amp; Web System Application Intern</strong>, engineering a modern redesigned company website and interactive web system. A <strong class="text-white font-semibold">BITE (UTeM)</strong> developer fusing frontend craftsmanship, <strong class="text-white font-semibold">Unity 6 simulations</strong>, and creative digital media.
+            </p>
+
+            <!-- Magnetic CTA Buttons -->
+            <div class="flex flex-wrap items-center gap-3 pt-1">
+              <a href="#projects" data-magnetic class="inline-flex items-center gap-2 rounded-2xl bg-accent-glow px-6 py-3.5 font-heading text-sm font-bold text-slate-950">
+                <span>Explore Projects</span>
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </a>
+              <button type="button" data-copy-email data-magnetic class="inline-flex items-center gap-2 glass-pill rounded-2xl px-5 py-3.5 font-heading text-sm font-semibold text-slate-100 transition hover:border-white/30 hover:text-accent">
+                <svg class="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                <span>Copy Email</span>
+              </button>
+              <a href="Ahmad_Afiq_CV.pdf" target="_blank" rel="noreferrer" data-magnetic class="inline-flex items-center gap-2 rounded-2xl border border-white/14 bg-white/[0.04] px-5 py-3.5 font-heading text-sm font-semibold text-slate-200 transition hover:border-white/30 hover:text-white">
+                <span>Resume ↗</span>
+              </a>
+            </div>
+
+            <!-- Subtle Ctrl + K Hint -->
+            <div class="pt-1 flex flex-wrap items-center gap-4">
+              <button type="button" id="hero-cmd-trigger" class="inline-flex items-center gap-2 text-xs text-slate-400 transition hover:text-slate-200">
+                <span>Press</span>
+                <kbd class="rounded-lg border border-white/15 bg-white/[0.07] px-2 py-0.5 font-mono text-[11px] font-semibold text-slate-100">Ctrl + K</kbd>
+                <span>to launch Command Palette</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: 3D Tilt "DEVELOPER LAB" Glass Card (4 REAL INTERACTIVE TABS) -->
+          <div class="lg:col-span-6 tilt-stage">
+            <div id="hero-tilt-card" class="tilt-card glass-surface rounded-[2rem] p-5 sm:p-6 relative">
+              <div id="hero-tilt-sheen" class="tilt-sheen"></div>
+
+              <!-- Header Bar + 4 Tabs -->
+              <div class="relative z-10 flex flex-wrap items-center justify-between gap-2.5 border-b border-white/10 pb-4">
+                <div class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-rose-400/80"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-amber-300/80"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+                  <span class="ml-1 font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-300">Developer Lab</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1 rounded-2xl border border-white/10 bg-black/40 p-1" role="tablist" aria-label="Interactive Developer Lab">
+                  <button type="button" data-lab-tab="web" class="lab-tab rounded-xl bg-white/15 px-2.5 py-1.5 font-mono text-[11px] font-semibold text-white transition">Web System</button>
+                  <button type="button" data-lab-tab="unity" class="lab-tab rounded-xl px-2.5 py-1.5 font-mono text-[11px] font-semibold text-slate-400 transition hover:text-white">Unity 6 FYP</button>
+                  <button type="button" data-lab-tab="game" class="lab-tab rounded-xl px-2.5 py-1.5 font-mono text-[11px] font-semibold text-slate-400 transition hover:text-white">Mini-Game</button>
+                  <button type="button" data-lab-tab="terminal" class="lab-tab rounded-xl px-2.5 py-1.5 font-mono text-[11px] font-semibold text-slate-400 transition hover:text-white">Terminal</button>
+                </div>
+              </div>
+
+              <!-- TAB 1: Architectural Window & Daylight Simulator -->
+              <div id="lab-panel-web" class="lab-panel relative z-10 mt-5 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-accent">Interactive Web System</p>
+                    <h3 class="font-heading text-lg font-bold text-white">Architectural Window &amp; Daylight Sim</h3>
+                  </div>
+                  <button id="ambience-toggle" type="button" class="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 font-mono text-[11px] font-medium text-slate-200 transition hover:border-white/30">
+                    <span id="ambience-icon">☀️</span>
+                    <span id="ambience-text">Day Mode</span>
+                  </button>
+                </div>
+
+                <!-- Louver Preview Arena -->
+                <div id="arch-stage" class="relative h-48 w-full overflow-hidden rounded-2xl border border-white/15 bg-slate-900/90 p-4 flex flex-col justify-between transition-colors duration-500">
+                  <div id="arch-glow" class="pointer-events-none absolute inset-0 transition-all duration-300"></div>
+
+                  <div class="relative z-10 grid gap-2.5 my-auto">
+                    <div class="arch-slat h-3.5 w-full rounded-full border transition-all duration-300"></div>
+                    <div class="arch-slat h-3.5 w-full rounded-full border transition-all duration-300"></div>
+                    <div class="arch-slat h-3.5 w-full rounded-full border transition-all duration-300"></div>
+                    <div class="arch-slat h-3.5 w-full rounded-full border transition-all duration-300"></div>
+                    <div class="arch-slat h-3.5 w-full rounded-full border transition-all duration-300"></div>
+                  </div>
+
+                  <!-- Live Telemetry Readouts -->
+                  <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 rounded-xl bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1.5 font-mono text-[11px] text-slate-200">
+                    <span id="louver-angle-label">Angle: 68%</span>
+                    <span id="lux-readout" class="text-slate-300">462 lux</span>
+                    <span id="glare-readout" class="text-accent font-semibold">Glare: Low</span>
+                  </div>
+                </div>
+
+                <!-- Controls: Slat Slider + 3 Material Swatches -->
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+                  <div class="sm:col-span-7 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
+                    <div class="flex items-center justify-between font-mono text-[11px] text-slate-300 mb-2">
+                      <label for="louver-slider">Slat Angle</label>
+                      <span id="louver-pct-badge" class="text-accent font-semibold">68%</span>
+                    </div>
+                    <input id="louver-slider" type="range" min="0" max="100" value="68" class="glass-range w-full" aria-label="Adjust architectural slat angle" />
+                  </div>
+
+                  <div class="sm:col-span-5 rounded-2xl border border-white/10 bg-white/[0.03] p-3 flex flex-col justify-between">
+                    <span class="font-mono text-[11px] text-slate-300">Finish: <strong id="mat-label" class="text-white">Nordic White</strong></span>
+                    <div class="mt-2 flex items-center gap-2">
+                      <button type="button" data-mat="nordic" title="Nordic White" class="mat-swatch h-6 w-6 rounded-full bg-slate-100 ring-2 ring-[var(--accent)] ring-offset-2 ring-offset-slate-950 transition"></button>
+                      <button type="button" data-mat="obsidian" title="Obsidian Slate" class="mat-swatch h-6 w-6 rounded-full bg-slate-700 border border-white/30 transition hover:scale-110"></button>
+                      <button type="button" data-mat="oak" title="Warm Oak" class="mat-swatch h-6 w-6 rounded-full bg-amber-600 border border-amber-300/40 transition hover:scale-110"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Unity 6 FYP Construction Safety Inspector + Hazard Radar Scan -->
+              <div id="lab-panel-unity" class="lab-panel hidden relative z-10 mt-5 space-y-3.5">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-accent">Unity 6 + URP · BITE FYP</p>
+                    <h3 class="font-heading text-lg font-bold text-white">Safety Training Inspector</h3>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button id="hazard-scan-btn" type="button" class="inline-flex items-center gap-1.5 rounded-full border border-[var(--accent)]/45 bg-[var(--accent)]/15 px-3 py-1 font-mono text-[11px] font-semibold text-accent transition hover:bg-[var(--accent)]/25">
+                      <span>◎</span>
+                      <span>Run Hazard Scan</span>
+                    </button>
+                    <span id="risk-status-pill" class="rounded-full bg-rose-500/20 border border-rose-400/40 px-2.5 py-1 font-mono text-[11px] font-semibold text-rose-300">100% CRITICAL</span>
+                  </div>
+                </div>
+
+                <!-- Risk Meter + Radar Sweep Overlay -->
+                <div class="relative overflow-hidden rounded-2xl border border-white/12 bg-black/45 p-3.5 space-y-2">
+                  <div id="radar-beam" class="radar-beam"></div>
+                  <div class="relative z-10 flex items-end justify-between">
+                    <span class="font-mono text-xs text-slate-400">Dynamic Site Risk Meter</span>
+                    <span id="risk-value-text" class="font-heading text-2xl font-extrabold text-rose-400">100%</span>
+                  </div>
+                  <div class="relative z-10 h-2.5 w-full overflow-hidden rounded-full bg-white/10">
+                    <div id="risk-bar" class="h-full rounded-full bg-gradient-to-r from-rose-500 to-amber-400 transition-all duration-500" style="width: 100%;"></div>
+                  </div>
+                  <div id="csharp-log" class="relative z-10 rounded-xl bg-black/55 border border-white/10 px-3 py-2 font-mono text-[11px] text-emerald-300/95 overflow-x-auto whitespace-nowrap">
+                    [Unity6.RiskManager] Risk=100% | State=CRITICAL | PPE=0/4
+                  </div>
+                </div>
+
+                <!-- 4 Clickable PPE Toggles -->
+                <div class="grid grid-cols-2 gap-2.5">
+                  <button type="button" data-ppe="helmet" class="ppe-btn flex items-center justify-between rounded-2xl border border-white/12 bg-white/[0.04] px-3.5 py-2.5 text-left transition hover:border-white/30">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-lg">⛑️</span>
+                      <div>
+                        <p class="font-heading text-xs font-bold text-white">Safety Helmet</p>
+                        <p class="ppe-state font-mono text-[10px] text-slate-400">Unverified</p>
+                      </div>
+                    </div>
+                    <span class="ppe-dot h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                  </button>
+
+                  <button type="button" data-ppe="vest" class="ppe-btn flex items-center justify-between rounded-2xl border border-white/12 bg-white/[0.04] px-3.5 py-2.5 text-left transition hover:border-white/30">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-lg">🦺</span>
+                      <div>
+                        <p class="font-heading text-xs font-bold text-white">Hi-Vis Vest</p>
+                        <p class="ppe-state font-mono text-[10px] text-slate-400">Unverified</p>
+                      </div>
+                    </div>
+                    <span class="ppe-dot h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                  </button>
+
+                  <button type="button" data-ppe="harness" class="ppe-btn flex items-center justify-between rounded-2xl border border-white/12 bg-white/[0.04] px-3.5 py-2.5 text-left transition hover:border-white/30">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-lg">🪢</span>
+                      <div>
+                        <p class="font-heading text-xs font-bold text-white">Safety Harness</p>
+                        <p class="ppe-state font-mono text-[10px] text-slate-400">Unverified</p>
+                      </div>
+                    </div>
+                    <span class="ppe-dot h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                  </button>
+
+                  <button type="button" data-ppe="boots" class="ppe-btn flex items-center justify-between rounded-2xl border border-white/12 bg-white/[0.04] px-3.5 py-2.5 text-left transition hover:border-white/30">
+                    <div class="flex items-center gap-2.5">
+                      <span class="text-lg">🥾</span>
+                      <div>
+                        <p class="font-heading text-xs font-bold text-white">Steel Boots</p>
+                        <p class="ppe-state font-mono text-[10px] text-slate-400">Unverified</p>
+                      </div>
+                    </div>
+                    <span class="ppe-dot h-2.5 w-2.5 rounded-full bg-rose-400"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- TAB 3: Playable 15s "Cyber Orb Reflex" Mini-Game -->
+              <div id="lab-panel-game" class="lab-panel hidden relative z-10 mt-5 space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div>
+                    <p class="font-mono text-[11px] uppercase tracking-wider text-accent">Playable Game Tech Demo</p>
+                    <h3 class="font-heading text-lg font-bold text-white">Cyber Orb Reflex</h3>
+                  </div>
+                  <div class="flex items-center gap-2 font-mono text-[11px]">
+                    <span class="rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 text-slate-300">Best: <strong id="game-best" class="text-accent">0</strong></span>
+                    <span class="rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 text-slate-300">Time: <strong id="game-time" class="text-white">15.0s</strong></span>
+                  </div>
+                </div>
+
+                <!-- Game Arena -->
+                <div id="orb-arena" class="relative h-52 w-full overflow-hidden rounded-2xl border border-white/15 bg-black/55 select-none">
+                  <div class="pointer-events-none absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+                  <!-- Start / End Overlay -->
+                  <div id="orb-overlay" class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/55 backdrop-blur-sm p-4 text-center">
+                    <p id="orb-overlay-title" class="font-heading text-lg font-bold text-white">Test Your Reflexes</p>
+                    <p id="orb-overlay-sub" class="mt-1 max-w-xs text-xs text-slate-300">Click glowing glass orbs as fast as you can in 15 seconds to build combos and set a new high score.</p>
+                    <button id="orb-start-btn" type="button" class="mt-4 rounded-xl bg-accent-glow px-5 py-2.5 font-heading text-xs font-bold text-slate-950">
+                      Start 15s Challenge
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Live Score & Combo Bar -->
+                <div class="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-2.5 font-mono text-xs">
+                  <span class="text-slate-300">Score: <strong id="game-score" class="text-white text-sm">0</strong></span>
+                  <span class="text-slate-300">Combo: <strong id="game-combo" class="text-accent text-sm">x1</strong></span>
+                </div>
+              </div>
+
+              <!-- TAB 4: Interactive CLI Terminal (afiq@dev:~$) -->
+              <div id="lab-panel-terminal" class="lab-panel hidden relative z-10 mt-5 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <button type="button" data-term-cmd="help" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">help</button>
+                  <button type="button" data-term-cmd="about" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">about</button>
+                  <button type="button" data-term-cmd="status" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">status</button>
+                  <button type="button" data-term-cmd="stack" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">stack</button>
+                  <button type="button" data-term-cmd="projects" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">projects</button>
+                  <button type="button" data-term-cmd="theme" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">theme</button>
+                  <button type="button" data-term-cmd="contact" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-slate-200 transition hover:border-[var(--accent)] hover:text-accent">contact</button>
+                  <button type="button" data-term-cmd="clear" class="term-chip rounded-lg border border-white/12 bg-white/[0.05] px-2.5 py-1 font-mono text-[11px] text-rose-300 transition hover:border-rose-400">clear</button>
+                </div>
+
+                <div id="term-output" class="h-44 overflow-y-auto rounded-2xl border border-white/12 bg-black/55 p-3.5 font-mono text-xs leading-relaxed text-slate-200 space-y-2">
+                  <div>
+                    <span class="text-accent">afiq@dev:~$</span> <span class="text-white">boot --spatial</span>
+                    <p class="mt-0.5 text-slate-300">Ahmad Afiq Spatial Shell ready. Click a chip above or type <span class="text-accent">help</span>, <span class="text-accent">about</span>, <span class="text-accent">theme</span>, or <span class="text-accent">status</span>.</p>
+                  </div>
+                </div>
+
+                <form id="term-form" class="flex items-center gap-2 rounded-2xl border border-white/15 bg-black/45 px-3.5 py-2.5">
+                  <span class="font-mono text-xs font-semibold text-accent shrink-0">afiq@dev:~$</span>
+                  <input id="term-input" type="text" placeholder="Type command & press Enter..." autocomplete="off" class="w-full bg-transparent font-mono text-xs text-white placeholder-slate-500 focus:outline-none" />
+                </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT & STUDIO-ENHANCED PORTRAIT BENTO ==================== -->
+    <section id="about" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4" data-reveal>
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent">01 // About &amp; Studio Profile</p>
+            <h2 class="section-h2 mt-2 text-3xl sm:text-4xl lg:text-5xl text-white">
+              Creative Engineering, <span class="text-accent">Real-World</span> Impact
+            </h2>
+          </div>
+          <p class="max-w-md text-[15px] text-slate-400">
+            Blending production web systems, Unity 6 interactive simulations, and high-engagement digital media.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <!-- Left Column: 4 Animated Counter Metrics + Bento Bio -->
+          <div class="lg:col-span-7 flex flex-col gap-5">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-card rounded-3xl p-5 sm:p-6" data-reveal>
+                <p class="font-mono text-[11px] uppercase tracking-wider text-accent">Live Internship</p>
+                <p class="mt-2 font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                  0<span data-count="1">0</span>
+                </p>
+                <p class="mt-1 text-xs sm:text-sm text-slate-300">Production Web System</p>
+              </div>
+
+              <div class="glass-card rounded-3xl p-5 sm:p-6" data-reveal>
+                <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Portfolio</p>
+                <p class="mt-2 font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                  <span data-count="10">0</span>
+                </p>
+                <p class="mt-1 text-xs sm:text-sm text-slate-300">Selected Projects</p>
+              </div>
+
+              <div class="glass-card rounded-3xl p-5 sm:p-6" data-reveal>
+                <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400">UTeM · Honours</p>
+                <p class="mt-2 font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                  3.<span data-count="20">00</span>
+                </p>
+                <p class="mt-1 text-xs sm:text-sm text-slate-300">BITE CGPA</p>
+              </div>
+
+              <div class="glass-card rounded-3xl p-5 sm:p-6" data-reveal>
+                <p class="font-mono text-[11px] uppercase tracking-wider text-slate-400">TikTok @cikgumlbb</p>
+                <p class="mt-2 font-heading text-3xl sm:text-4xl font-extrabold text-white">
+                  <span data-count="100">0</span><span class="text-accent">K+</span>
+                </p>
+                <p class="mt-1 text-xs sm:text-sm text-slate-300">Creator Community</p>
+              </div>
+            </div>
+
+            <!-- Bio Glass Card -->
+            <div class="glass-card flex-1 rounded-3xl p-7 sm:p-8 flex flex-col justify-between" data-reveal>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="rounded-full badge-accent px-3.5 py-1 font-mono text-xs font-semibold">BITE · UTeM</span>
+                  <span class="rounded-full border border-emerald-400/35 bg-emerald-400/12 px-3.5 py-1 font-mono text-xs font-semibold text-emerald-300">Full-Time Ready · April 2027</span>
+                </div>
+                <h3 class="mt-5 font-heading text-2xl font-bold leading-snug text-white">
+                  My name is Ahmad Afiq — Multimedia, Web System &amp; Game Developer.
+                </h3>
+                <p class="mt-3.5 text-[15px] leading-[1.72] text-slate-300">
+                  I am currently interning as a <strong class="text-white">Multimedia &amp; Web System Application Intern</strong>, designing and building the company’s redesigned website, interactive catalog transitions, and web system architecture.
+                </p>
+                <p class="mt-3 text-[15px] leading-[1.72] text-slate-300">
+                  Backed by my <strong class="text-white">BITE</strong> degree in Game Technology at UTeM, prior QA testing experience at HeiTech Padu Berhad, and a 100K+ creative audience, I engineer digital experiences that are both visually memorable and technically solid.
+                </p>
+              </div>
+
+              <div class="mt-6 flex flex-wrap gap-3 pt-5 border-t border-white/10">
+                <a href="Ahmad_Afiq_CV.pdf" target="_blank" rel="noreferrer" class="rounded-xl bg-white/10 px-4 py-2.5 font-heading text-xs font-semibold text-white transition hover:bg-white/20">
+                  Download Resume ↗
+                </a>
+                <a href="#contact" class="rounded-xl border border-white/14 px-4 py-2.5 font-heading text-xs font-semibold text-slate-200 transition hover:border-white/30 hover:text-accent">
+                  Connect for April 2027 →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Studio-Enhanced Portrait Card with 3D Parallax & 5 Rim-Lights -->
+          <div class="lg:col-span-5 flex" data-reveal>
+            <div id="portrait-card" class="glass-card w-full rounded-[2rem] p-4 flex flex-col justify-between min-h-[520px] sm:min-h-[560px] relative">
+              <div id="portrait-stage" class="relative flex-1 overflow-hidden rounded-[1.5rem] bg-[#050912] border border-white/12 flex items-end justify-center">
+                <!-- Studio Grid Backdrop -->
+                <div class="pointer-events-none absolute inset-0 opacity-25" style="background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+                <!-- Dynamic Multi-Layer Studio Aura Halo -->
+                <div id="studio-halo-primary" class="studio-halo pointer-events-none absolute top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 sm:h-80 sm:w-80 rounded-full blur-3xl opacity-75" style="background: radial-gradient(circle, rgba(34,211,238,0.88) 0%, rgba(56,189,248,0.35) 55%, transparent 75%);"></div>
+                <div id="studio-halo-ring" class="studio-halo pointer-events-none absolute top-[44%] left-1/2 -translate-x-1/2 -translate-y-1/2 h-64 w-64 sm:h-72 sm:w-72 rounded-full border-2 border-cyan-400/50 shadow-[0_0_55px_rgba(34,211,238,0.45)] opacity-85"></div>
+
+                <!-- Built-in "Test Photo" Upload Button (Top-Left) -->
+                <div class="absolute top-3.5 left-3.5 z-30">
+                  <label for="portrait-file-input" title="Pick your local gambo.jpg to preview live studio rim-lighting" class="cursor-pointer inline-flex items-center gap-1.5 glass-pill rounded-full px-3 py-1.5 font-mono text-[11px] font-medium text-slate-200 transition hover:border-white/35 hover:text-accent">
+                    <svg class="h-3.5 w-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>
+                    <span>Test Photo</span>
+                  </label>
+                  <input id="portrait-file-input" type="file" accept="image/*" class="hidden" />
+                </div>
+
+                <!-- Floating Frosted Badge 1 (Top-Right) -->
+                <div class="float-badge-1 absolute top-3.5 right-3.5 z-30 glass-pill rounded-2xl px-3.5 py-2 text-right max-w-[170px]">
+                  <p class="font-mono text-[10px] uppercase tracking-wider text-accent">Current Role</p>
+                  <p class="font-heading text-xs font-bold leading-tight text-white mt-0.5">Multimedia &amp; Web System Intern</p>
+                </div>
+
+                <!-- Floating Frosted Badge 2 (Bottom-Left) -->
+                <div class="float-badge-2 absolute bottom-4 left-3.5 z-30 glass-pill rounded-2xl px-3.5 py-2 flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_#34d399]"></span>
+                  <div>
+                    <p class="font-heading text-xs font-bold leading-none text-white">BITE · UTeM</p>
+                    <p class="font-mono text-[10px] text-slate-300 mt-0.5">Game Technology</p>
+                  </div>
+                </div>
+
+                <!-- Holographic Monogram Fallback -->
+                <div id="portrait-fallback" class="hidden absolute inset-0 z-10 flex-col items-center justify-center p-6 text-center">
+                  <div class="flex h-28 w-28 items-center justify-center rounded-3xl glass-pill font-heading text-5xl font-extrabold text-white shadow-2xl border border-white/25">
+                    AA
+                  </div>
+                  <p class="mt-4 font-heading text-base font-bold text-white">Ahmad Afiq</p>
+                  <p class="mt-1 font-mono text-[11px] text-slate-300 max-w-[230px]">
+                    Uses <span class="text-accent">assets/gambo.png</span> automatically, or click <span class="text-white">Test Photo</span> above to preview your local <span class="text-accent">gambo.jpg</span> live!
+                  </p>
+                </div>
+
+                <!-- Portrait Image (assets/gambo.png -> assets/gambo.jpg -> Fallback) -->
+                <img
+                  id="studio-portrait-img"
+                  src="assets/gambo.png"
+                  alt="Studio-enhanced portrait of Ahmad Afiq"
+                  loading="lazy"
+                  decoding="async"
+                  class="studio-portrait-img relative z-20 h-full w-full object-contain object-bottom pt-8"
+                  style="filter: contrast(1.08) saturate(1.12) drop-shadow(0 0 24px rgba(34,211,238,0.58));"
+                />
+
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 z-20 bg-gradient-to-t from-[#050811] via-[#050811]/45 to-transparent"></div>
+              </div>
+
+              <!-- 5 Studio Rim-Light Selector Bar -->
+              <div class="relative z-20 mt-3.5 rounded-2xl border border-white/10 bg-black/40 p-3">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400">Studio Rim-Light</span>
+                  <span id="studio-preset-label" class="font-mono text-[11px] font-semibold text-accent">Cyan Rim</span>
+                </div>
+                <div class="grid grid-cols-5 gap-1.5" role="group" aria-label="Portrait Studio Rim-Light Presets">
+                  <button type="button" data-studio="cyan" class="studio-btn active rounded-xl border border-cyan-400/50 bg-cyan-400/20 py-1.5 font-mono text-[10px] sm:text-[11px] font-semibold text-white transition">Cyan</button>
+                  <button type="button" data-studio="violet" class="studio-btn rounded-xl border border-white/10 bg-white/[0.04] py-1.5 font-mono text-[10px] sm:text-[11px] font-medium text-slate-300 transition hover:text-white">Violet</button>
+                  <button type="button" data-studio="emerald" class="studio-btn rounded-xl border border-white/10 bg-white/[0.04] py-1.5 font-mono text-[10px] sm:text-[11px] font-medium text-slate-300 transition hover:text-white">Emerald</button>
+                  <button type="button" data-studio="gold" class="studio-btn rounded-xl border border-white/10 bg-white/[0.04] py-1.5 font-mono text-[10px] sm:text-[11px] font-medium text-slate-300 transition hover:text-white">Gold</button>
+                  <button type="button" data-studio="natural" class="studio-btn rounded-xl border border-white/10 bg-white/[0.04] py-1.5 font-mono text-[10px] sm:text-[11px] font-medium text-slate-300 transition hover:text-white">Natural</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Infinite Glass Tech Stack Marquee -->
+        <div class="mt-6 glass-pill rounded-full py-3.5 px-2 overflow-hidden marquee-wrap" data-reveal>
+          <div class="marquee-track items-center gap-3 font-mono text-xs text-slate-200">
+            <div class="flex items-center gap-3 pr-3">
+              <span class="rounded-full badge-accent px-4 py-1.5 font-semibold">HTML5 / CSS3 / JS</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">Web Systems</span>
+              <span class="rounded-full badge-accent px-4 py-1.5 font-semibold">Unity 6 + URP</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">C# &amp; OOP</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">PHP &amp; MySQL</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">Blender 3D</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">After Effects</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">UI / UX Design</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">QA &amp; SIT Testing</span>
+            </div>
+            <div class="flex items-center gap-3 pr-3" aria-hidden="true">
+              <span class="rounded-full badge-accent px-4 py-1.5 font-semibold">HTML5 / CSS3 / JS</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">Web Systems</span>
+              <span class="rounded-full badge-accent px-4 py-1.5 font-semibold">Unity 6 + URP</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">C# &amp; OOP</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">PHP &amp; MySQL</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">Blender 3D</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">After Effects</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">UI / UX Design</span>
+              <span class="rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5">QA &amp; SIT Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE & JOURNEY TIMELINE ==================== -->
+    <section id="journey" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12" data-reveal>
+          <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent">02 // Experience &amp; Roadmap</p>
+          <h2 class="section-h2 mt-2 text-3xl sm:text-4xl lg:text-5xl text-white">
+            My Developer <span class="text-accent">Journey</span>
+          </h2>
+          <p class="mt-2 max-w-2xl text-[15px] text-slate-400">
+            From software testing and content creation to engineering production web systems and Unity 6 worlds.
+          </p>
+        </div>
+
+        <div id="timeline-wrap" class="relative space-y-5">
+          <!-- Glowing Progress Rail -->
+          <div class="pointer-events-none absolute left-5 sm:left-6 top-4 bottom-4 w-px bg-white/12">
+            <div id="timeline-progress" class="w-full h-0 bg-gradient-to-b from-emerald-400 via-[var(--accent)] to-[var(--accent-2)] shadow-[0_0_12px_var(--accent)] transition-all duration-150"></div>
+          </div>
+
+          <!-- 1. Current Internship -->
+          <article class="relative pl-12 sm:pl-16" data-reveal>
+            <span class="absolute left-[14px] sm:left-[18px] top-7 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-400 shadow-[0_0_16px_#34d399]"></span>
+            <div class="glass-card rounded-3xl p-6 sm:p-7 border-emerald-400/30">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-400/15 border border-emerald-400/35 px-3 py-1 font-mono text-xs font-semibold text-emerald-300">
+                  Current · Sep 2026 – Mar 2027
+                </span>
+                <span class="font-mono text-xs text-slate-400">Industrial Training</span>
+              </div>
+              <h3 class="mt-3.5 font-heading text-xl sm:text-2xl font-bold text-white">Multimedia &amp; Web System Application Intern</h3>
+              <p class="mt-2 text-[15px] leading-[1.7] text-slate-300">
+                Designing and developing the company’s redesigned website, interactive catalog transitions, and web system architecture—delivering responsive layouts and modern production workflows.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. Available April 2027 -->
+          <article class="relative pl-12 sm:pl-16" data-reveal>
+            <span class="absolute left-[14px] sm:left-[18px] top-7 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[var(--accent)] shadow-[0_0_16px_var(--accent)]"></span>
+            <div class="glass-card rounded-3xl p-6 sm:p-7 bg-gradient-to-r from-[var(--accent)]/12 to-transparent border-[var(--accent)]/35">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded-full badge-accent px-3 py-1 font-mono text-xs font-semibold">Available April 2027</span>
+                <span class="font-mono text-xs text-accent">Full-Time Placement</span>
+              </div>
+              <h3 class="mt-3.5 font-heading text-xl sm:text-2xl font-bold text-white">Seeking Full-Time Role</h3>
+              <p class="mt-2 text-[15px] leading-[1.7] text-slate-200">
+                Ready to join engineering and creative teams starting <strong class="text-white">April 2027</strong> in <strong class="text-white">Game Development, Frontend / Web Systems, Interactive Technology, or QA Engineering</strong>.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. Final Year Project -->
+          <article class="relative pl-12 sm:pl-16" data-reveal>
+            <span class="absolute left-[14px] sm:left-[18px] top-7 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white/60"></span>
+            <div class="glass-card rounded-3xl p-6 sm:p-7">
+              <span class="font-mono text-xs font-medium text-slate-400">Final Year Project · BITE (UTeM)</span>
+              <h3 class="mt-2 font-heading text-xl font-bold text-white">Construction Safety Training Simulation — Solo Developer</h3>
+              <p class="mt-1 font-mono text-xs text-accent">Unity 6 · URP · C#</p>
+              <p class="mt-2.5 text-[15px] leading-[1.7] text-slate-300">
+                Built a first-person construction safety simulation featuring worker PPE inspection, hazard decisions, dynamic risk meter, UI feedback, and iterative playtesting.
+              </p>
+            </div>
+          </article>
+
+          <!-- 4. Diploma Internship -->
+          <article class="relative pl-12 sm:pl-16" data-reveal>
+            <span class="absolute left-[14px] sm:left-[18px] top-7 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white/50"></span>
+            <div class="glass-card rounded-3xl p-6 sm:p-7">
+              <span class="font-mono text-xs font-medium text-slate-400">Diploma Internship</span>
+              <h3 class="mt-2 font-heading text-xl font-bold text-white">Software Tester Intern</h3>
+              <p class="mt-1 font-mono text-xs text-accent">HeiTech Padu Berhad · Putrajaya</p>
+              <p class="mt-2.5 text-[15px] leading-[1.7] text-slate-300">
+                Prepared test scripts, executed functional testing across software flows, logged defects, documented results, and participated in System Integration Testing (SIT) meetings.
+              </p>
+            </div>
+          </article>
+
+          <!-- 5. Creative Media -->
+          <article class="relative pl-12 sm:pl-16" data-reveal>
+            <span class="absolute left-[14px] sm:left-[18px] top-7 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white/50"></span>
+            <div class="glass-card rounded-3xl p-6 sm:p-7">
+              <span class="font-mono text-xs font-medium text-slate-400">Creative Media</span>
+              <h3 class="mt-2 font-heading text-xl font-bold text-white">Content Creator &amp; Video Editor</h3>
+              <p class="mt-1 font-mono text-xs text-accent">TikTok · @cikgumlbb · 100K+ Community</p>
+              <p class="mt-2.5 text-[15px] leading-[1.7] text-slate-300">
+                Built a 100K+ organic TikTok community through sharp visual hooks, tight audio synchronization, editorial pacing, and audience-first storytelling.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== INTERACTIVE PROJECTS GALLERY (10 PROJECTS) ==================== -->
+    <section id="projects" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6" data-reveal>
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent">03 // Selected Works</p>
+            <h2 class="section-h2 mt-2 text-3xl sm:text-4xl lg:text-5xl text-white">
+              Featured <span class="text-accent">Projects</span>
+            </h2>
+            <p class="mt-2 text-[15px] text-slate-400">
+              Click any card to launch its frosted-glass Case Study with Problem, Architecture, and Tech Stack.
+            </p>
+          </div>
+
+          <div class="inline-flex flex-wrap gap-1.5 glass-pill rounded-2xl p-1.5" role="tablist" aria-label="Filter projects">
+            <button type="button" data-filter="all" class="proj-filter active rounded-xl bg-white/15 px-4 py-2 font-heading text-xs font-semibold text-white transition">All (10)</button>
+            <button type="button" data-filter="web" class="proj-filter rounded-xl px-4 py-2 font-heading text-xs font-semibold text-slate-300 transition hover:text-white">Web &amp; Systems</button>
+            <button type="button" data-filter="game" class="proj-filter rounded-xl px-4 py-2 font-heading text-xs font-semibold text-slate-300 transition hover:text-white">Unity &amp; Games</button>
+            <button type="button" data-filter="motion" class="proj-filter rounded-xl px-4 py-2 font-heading text-xs font-semibold text-slate-300 transition hover:text-white">Video &amp; Motion</button>
+          </div>
+        </div>
+
+        <div id="projects-grid" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5"></div>
+      </div>
+    </section>
+
+    <!-- ==================== TECHNICAL SKILLS (WITH ANIMATED PROFICIENCY BARS) ==================== -->
+    <section id="skills" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4" data-reveal>
+          <div>
+            <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent">04 // Capabilities</p>
+            <h2 class="section-h2 mt-2 text-3xl sm:text-4xl lg:text-5xl text-white">
+              Technical <span class="text-accent">Skills</span>
+            </h2>
+          </div>
+          <p class="max-w-md text-[15px] text-slate-400">
+            Four multidisciplinary modules powering end-to-end delivery from prototype to production.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <!-- 01 Web & Systems -->
+          <article class="glass-card rounded-3xl p-6 sm:p-7" data-reveal>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-semibold text-accent">01</span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-2xl badge-accent">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+              </span>
+            </div>
+            <h3 class="mt-5 font-heading text-xl font-bold text-white">Web &amp; Systems</h3>
+            <div class="mt-5 space-y-3.5">
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>HTML5 / CSS3 / Tailwind</span><span class="text-accent">92%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="92%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>JavaScript &amp; Interactive UI</span><span class="text-accent">86%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="86%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>PHP &amp; MySQL CRUD</span><span class="text-accent">82%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="82%"></div></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 Game Development -->
+          <article class="glass-card rounded-3xl p-6 sm:p-7" data-reveal>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-semibold text-accent">02</span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-2xl badge-accent">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" /><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </span>
+            </div>
+            <h3 class="mt-5 font-heading text-xl font-bold text-white">Game Development</h3>
+            <div class="mt-5 space-y-3.5">
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Unity 6 &amp; URP</span><span class="text-accent">90%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="90%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>C# &amp; Gameplay Systems</span><span class="text-accent">88%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="88%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Unreal Engine &amp; Godot</span><span class="text-accent">74%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="74%"></div></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 Interaction & UI Design -->
+          <article class="glass-card rounded-3xl p-6 sm:p-7" data-reveal>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-semibold text-accent">03</span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-2xl badge-accent">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+              </span>
+            </div>
+            <h3 class="mt-5 font-heading text-xl font-bold text-white">Interaction &amp; UI</h3>
+            <div class="mt-5 space-y-3.5">
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>UI / UX &amp; Prototyping</span><span class="text-accent">89%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="89%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Level &amp; Flow Design</span><span class="text-accent">85%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="85%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Blender 3D &amp; Photoshop</span><span class="text-accent">80%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="80%"></div></div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 QA & Motion -->
+          <article class="glass-card rounded-3xl p-6 sm:p-7" data-reveal>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-xs font-semibold text-accent">04</span>
+              <span class="flex h-10 w-10 items-center justify-center rounded-2xl badge-accent">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </span>
+            </div>
+            <h3 class="mt-5 font-heading text-xl font-bold text-white">QA &amp; Motion</h3>
+            <div class="mt-5 space-y-3.5">
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Functional Testing &amp; SIT</span><span class="text-accent">88%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="88%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>After Effects &amp; Editing</span><span class="text-accent">91%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="91%"></div></div>
+              </div>
+              <div>
+                <div class="flex justify-between font-mono text-[11px] text-slate-300 mb-1"><span>Defect Logging &amp; Git</span><span class="text-accent">85%</span></div>
+                <div class="h-1.5 rounded-full bg-white/10 overflow-hidden"><div class="skill-fill h-full rounded-full bg-gradient-to-r from-[var(--accent)] to-[var(--accent-2)]" data-level="85%"></div></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EDUCATION & LANGUAGES (CLEAN & MATURE) ==================== -->
+    <section id="education" class="py-16 sm:py-20">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12" data-reveal>
+          <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-accent">05 // Academic Background</p>
+          <h2 class="section-h2 mt-2 text-3xl sm:text-4xl lg:text-5xl text-white">
+            Education &amp; <span class="text-accent">Languages</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          <!-- UTeM BITE Degree -->
+          <article class="glass-card lg:col-span-6 rounded-3xl p-7 sm:p-8 border-[var(--accent)]/30 bg-gradient-to-br from-[var(--accent)]/12 via-white/[0.04] to-transparent flex flex-col justify-between" data-reveal>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded-full badge-accent px-3.5 py-1 font-mono text-xs font-semibold">2023 — Present</span>
+                <span class="font-mono text-xs font-bold text-accent">BITE</span>
+              </div>
+              <p class="mt-6 font-mono text-xs font-medium text-slate-300">Universiti Teknikal Malaysia Melaka (UTeM)</p>
+              <h3 class="mt-2 font-heading text-2xl font-bold leading-snug text-white">
+                Bachelor of Information Technology (Game Technology) with Honours (BITE)
+              </h3>
+            </div>
+            <div class="mt-8 flex items-end justify-between border-t border-white/12 pt-5">
+              <span class="font-mono text-xs uppercase tracking-wider text-slate-400">Current CGPA</span>
+              <span class="font-heading text-4xl font-extrabold text-white">3.20</span>
+            </div>
+          </article>
+
+          <!-- UIS / KUIS Diploma -->
+          <article class="glass-card lg:col-span-6 rounded-3xl p-7 sm:p-8 flex flex-col justify-between" data-reveal>
+            <div>
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="rounded-full border border-white/14 bg-white/[0.04] px-3.5 py-1 font-mono text-xs font-medium text-slate-300">2020 — 2023</span>
+                <span class="font-mono text-xs text-slate-400">Diploma</span>
+              </div>
+              <p class="mt-6 font-mono text-xs font-medium text-slate-300">Universiti Islam Selangor (UIS / KUIS)</p>
+              <h3 class="mt-2 font-heading text-2xl font-bold leading-snug text-white">
+                Diploma in Computer Science
+              </h3>
+            </div>
+            <div class="mt-8 flex items-end justify-between border-t border-white/12 pt-5">
+              <span class="font-mono text-xs uppercase tracking-wider text-slate-400">Graduated CGPA</span>
+              <span class="font-heading text-4xl font-extrabold text-accent">3.68</span>
+            </div>
+          </article>
+
+          <!-- Languages Bar -->
+          <div class="glass-card lg:col-span-12 rounded-3xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-reveal>
+            <div>
+              <p class="font-mono text-xs font-semibold uppercase tracking-wider text-accent">Languages</p>
+              <p class="mt-1 text-sm text-slate-300">Effective communication across engineering teams, clients, and digital communities.</p>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <div class="flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.05] px-4 py-2">
+                <span class="font-heading text-sm font-semibold text-white">Malay</span>
+                <span class="font-mono text-xs text-accent">Native</span>
+              </div>
+              <div class="flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.05] px-4 py-2">
+                <span class="font-heading text-sm font-semibold text-white">English</span>
+                <span class="font-mono text-xs text-slate-300">Working</span>
+              </div>
+              <div class="flex items-center gap-2 rounded-full border border-white/14 bg-white/[0.05] px-4 py-2">
+                <span class="font-heading text-sm font-semibold text-white">Arabic</span>
+                <span class="font-mono text-xs text-slate-400">Foundational</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== LIQUID GLASS CONTACT HUB ==================== -->
+    <section id="contact" class="py-20 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="glass-card rounded-[2.25rem] p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden" data-reveal>
+          <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-56 w-[460px] rounded-full bg-[var(--accent)]/20 blur-[90px]"></div>
+
+          <div class="relative z-10 flex flex-col items-center">
+            <span class="inline-flex items-center gap-2 rounded-full badge-accent px-4 py-1.5 font-mono text-xs font-semibold">
+              <span class="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse"></span>
+              Open for Full-Time · April 2027
+            </span>
+
+            <h2 class="section-h2 mt-6 max-w-3xl text-3xl sm:text-5xl text-white">
+              Ready to Build Something <span class="text-accent">Remarkable</span>?
+            </h2>
+
+            <p class="mt-4 max-w-xl text-[15px] sm:text-base leading-[1.7] text-slate-300">
+              Hiring for Web Systems, Interactive Frontend, Game Technology, Multimedia, or QA Engineering starting April 2027? Let’s talk.
+            </p>
+
+            <!-- Primary Contact Buttons -->
+            <div class="mt-9 flex flex-wrap items-center justify-center gap-3.5">
+              <a href="mailto:ahmadafiq1506@gmail.com" data-magnetic class="inline-flex items-center gap-2 rounded-2xl bg-accent-glow px-7 py-4 font-heading text-sm font-bold text-slate-950">
+                <span>Email Me Directly</span>
+                <span>↗</span>
+              </a>
+              <button type="button" data-copy-email data-magnetic class="inline-flex items-center gap-2.5 glass-pill rounded-2xl px-6 py-4 font-mono text-xs sm:text-sm font-medium text-white transition hover:border-white/30 hover:text-accent">
+                <svg class="h-4 w-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>
+                <span>ahmadafiq1506@gmail.com</span>
+              </button>
+              <a href="Ahmad_Afiq_CV.pdf" target="_blank" rel="noreferrer" data-magnetic class="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/[0.04] px-6 py-4 font-heading text-sm font-semibold text-slate-200 transition hover:border-white/30 hover:text-white">
+                <span>Resume PDF ↗</span>
+              </a>
+            </div>
+
+            <!-- Direct Phone & Availability Strip (Update the last digit of phone before deploy) -->
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-mono text-xs text-slate-400">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="text-accent">TEL</span>
+                <span class="text-slate-200">+60 13-666 964X</span>
+                <span class="text-[10px] text-slate-500">(update full number)</span>
+              </span>
+              <span class="hidden sm:inline text-white/15">|</span>
+              <span class="inline-flex items-center gap-1.5">
+                <span class="text-accent">FULL-TIME</span>
+                <span class="text-slate-200">Available April 2027</span>
+              </span>
+            </div>
+
+            <!-- 5 Glass Social Cards -->
+            <div class="mt-10 grid w-full max-w-3xl grid-cols-2 sm:grid-cols-5 gap-2.5">
+              <a href="https://github.com/Ahmadafiq156" target="_blank" rel="noreferrer" class="glass-pill rounded-2xl px-4 py-3 font-heading text-xs font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-accent">GitHub ↗</a>
+              <a href="https://www.linkedin.com/in/ahmad-afiq-4478bb367/" target="_blank" rel="noreferrer" class="glass-pill rounded-2xl px-4 py-3 font-heading text-xs font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-accent">LinkedIn ↗</a>
+              <a href="https://www.youtube.com/@ahmadafiq6561" target="_blank" rel="noreferrer" class="glass-pill rounded-2xl px-4 py-3 font-heading text-xs font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-accent">YouTube ↗</a>
+              <a href="https://www.instagram.com/apeeeks_/" target="_blank" rel="noreferrer" class="glass-pill rounded-2xl px-4 py-3 font-heading text-xs font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-accent">Instagram ↗</a>
+              <a href="https://www.tiktok.com/@cikgumlbb" target="_blank" rel="noreferrer" class="col-span-2 sm:col-span-1 glass-pill rounded-2xl px-4 py-3 font-heading text-xs font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-[var(--accent)]/50 hover:text-accent">TikTok ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="relative z-10 border-t border-white/[0.08] py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <a href="#home" class="font-heading text-base font-bold text-white">ahmad<span class="text-accent">afiq</span></a>
+      <p class="font-mono text-xs text-slate-400">
+        ahmadafiq.me · BITE (UTeM) · Web Systems, Unity 6 &amp; Multimedia · © 2026 Ahmad Afiq
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== VISIONOS FLOATING BOTTOM DOCK ==================== -->
+  <nav id="vision-dock" aria-label="Quick Spatial Dock" class="vision-dock fixed bottom-5 left-1/2 z-50 glass-pill rounded-full px-2.5 py-2 flex items-center gap-1 sm:gap-1.5">
+    <a href="#home" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="Home">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Home</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+    </a>
+    <a href="#about" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="About">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">About</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+    </a>
+    <a href="#journey" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="Journey">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Journey</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+    </a>
+    <a href="#projects" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="Projects">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Projects</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+    </a>
+    <a href="#skills" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="Skills">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Skills</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    </a>
+    <a href="#contact" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12 hover:text-accent" aria-label="Contact">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Contact</span>
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+    </a>
+
+    <span class="mx-1 h-5 w-px bg-white/15"></span>
+
+    <button id="dock-theme-btn" type="button" class="dock-item flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:bg-white/12" aria-label="Switch Theme">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Switch Theme</span>
+      <span class="h-3.5 w-3.5 rounded-full bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]"></span>
+    </button>
+
+    <button id="dock-cmd-btn" type="button" class="dock-item flex h-10 items-center gap-1 rounded-full bg-white/10 px-3 font-mono text-[11px] font-semibold text-white hover:bg-white/20" aria-label="Open Command Palette">
+      <span class="dock-tooltip glass-pill rounded-lg px-2.5 py-1 font-mono text-[10px] text-white">Command Palette</span>
+      <span>Ctrl + K</span>
+    </button>
+  </nav>
+
+  <!-- ==================== FROSTED GLASS CASE STUDY MODAL ==================== -->
+  <div id="case-modal" class="modal-overlay fixed inset-0 z-[80] flex items-center justify-center bg-black/75 p-4 sm:p-6 backdrop-blur-lg" role="dialog" aria-modal="true" aria-labelledby="case-title">
+    <div class="modal-box glass-surface relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[2rem]">
+      <button id="case-close" type="button" aria-label="Close case study modal" class="absolute top-4 right-4 z-30 flex h-10 w-10 items-center justify-center rounded-full glass-pill text-white hover:text-accent">
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div id="case-media" class="relative h-56 sm:h-72 w-full overflow-hidden bg-slate-950"></div>
+
+      <div class="p-6 sm:p-8">
+        <div class="flex flex-wrap items-center gap-2">
+          <span id="case-idx" class="rounded-lg bg-accent-glow px-2.5 py-1 font-mono text-xs font-bold text-slate-950">01</span>
+          <span id="case-cat" class="rounded-lg badge-accent px-3 py-1 font-mono text-xs font-medium">Category</span>
+          <span id="case-status" class="font-mono text-xs text-slate-400">Status</span>
+        </div>
+
+        <h3 id="case-title" class="mt-4 font-heading text-2xl sm:text-3xl font-bold text-white">Title</h3>
+        <p id="case-role" class="mt-1 font-mono text-xs font-semibold text-accent">Role</p>
+
+        <div class="mt-5">
+          <p class="font-mono text-xs font-semibold uppercase tracking-wider text-slate-400">Problem &amp; Context</p>
+          <p id="case-challenge" class="mt-1.5 text-[15px] leading-[1.7] text-slate-300"></p>
+        </div>
+
+        <div class="mt-5 rounded-2xl border border-white/10 bg-black/35 p-5">
+          <p class="font-mono text-xs font-semibold uppercase tracking-wider text-accent">Architecture &amp; Highlights</p>
+          <ul id="case-highlights" class="mt-3 space-y-2.5 text-sm leading-relaxed text-slate-200"></ul>
+        </div>
+
+        <div class="mt-6">
+          <p class="font-mono text-xs uppercase tracking-wider text-slate-400">Tech Stack</p>
+          <div id="case-tags" class="mt-2.5 flex flex-wrap gap-2"></div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-5">
+          <a id="case-action" href="#" class="inline-flex items-center gap-2 rounded-2xl bg-accent-glow px-5 py-3 font-heading text-xs font-bold text-slate-950">
+            Action ↗
+          </a>
+          <button id="case-close-2" type="button" class="rounded-2xl border border-white/15 px-4 py-3 font-mono text-xs text-slate-300 hover:text-white">
+            Close (Esc)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COMMAND PALETTE MODAL (CTRL + K) ==================== -->
+  <div id="cmd-modal" class="modal-overlay fixed inset-0 z-[85] flex items-start justify-center bg-black/70 px-4 pt-20 sm:pt-28 backdrop-blur-md" role="dialog" aria-modal="true" aria-label="Command Palette">
+    <div class="modal-box glass-surface w-full max-w-xl overflow-hidden rounded-3xl">
+      <div class="flex items-center gap-3 border-b border-white/10 px-5 py-4">
+        <svg class="h-5 w-5 text-accent shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" /></svg>
+        <input id="cmd-input" type="text" placeholder="Search sections, project filters, themes, SFX, mini-game..." class="w-full bg-transparent text-sm text-white placeholder-slate-400 focus:outline-none" autocomplete="off" />
+        <kbd class="rounded-md border border-white/15 bg-white/[0.06] px-2 py-0.5 font-mono text-[11px] text-slate-300">Esc</kbd>
+      </div>
+      <div id="cmd-list" class="max-h-80 overflow-y-auto p-2.5 space-y-1"></div>
+      <div class="flex items-center justify-between border-t border-white/10 bg-black/25 px-5 py-2.5 font-mono text-[11px] text-slate-400">
+        <span>↑↓ Navigate · Enter Select · Esc Close</span>
+        <span>Ctrl + K</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING GLASS TOAST ==================== -->
+  <div id="toast" class="toast-glass fixed bottom-20 left-1/2 z-[95] flex items-center gap-2.5 glass-pill rounded-full px-5 py-3" role="status" aria-live="polite">
+    <span class="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]"></span>
+    <span id="toast-text" class="font-mono text-xs font-medium text-white">Email copied to clipboard!</span>
+  </div>
+
+  <!-- ==================== PURE VANILLA JAVASCRIPT ==================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+      /* -----------------------------------------------------------------------
+         1. WEB AUDIO API SPATIAL SFX ENGINE (Default OFF, Respectful)
+         ----------------------------------------------------------------------- */
+      let sfxEnabled = false;
+      let audioCtx = null;
+
+      function playGlassSFX(type = 'click') {
+        if (!sfxEnabled) return;
+        try {
+          if (!audioCtx) {
+            const Ctx = window.AudioContext || window.webkitAudioContext;
+            if (!Ctx) return;
+            audioCtx = new Ctx();
+          }
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          const now = audioCtx.currentTime;
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          if (type === 'click') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(640, now);
+            osc.frequency.exponentialRampToValueAtTime(920, now + 0.055);
+            gain.gain.setValueAtTime(0.055, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.065);
+            osc.start(now);
+            osc.stop(now + 0.07);
+          } else if (type === 'tab') {
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(520, now);
+            osc.frequency.exponentialRampToValueAtTime(780, now + 0.08);
+            gain.gain.setValueAtTime(0.05, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+            osc.start(now);
+            osc.stop(now + 0.1);
+          } else if (type === 'hit') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(760, now);
+            osc.frequency.exponentialRampToValueAtTime(1320, now + 0.09);
+            gain.gain.setValueAtTime(0.07, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+            osc.start(now);
+            osc.stop(now + 0.13);
+          } else if (type === 'modal') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(420, now);
+            osc.frequency.exponentialRampToValueAtTime(680, now + 0.14);
+            gain.gain.setValueAtTime(0.05, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+            osc.start(now);
+            osc.stop(now + 0.17);
+          } else if (type === 'scan') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(300, now);
+            osc.frequency.exponentialRampToValueAtTime(980, now + 0.25);
+            gain.gain.setValueAtTime(0.055, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.28);
+            osc.start(now);
+            osc.stop(now + 0.3);
+          }
+        } catch (err) {
+          // Silently ignore audio restrictions
+        }
+      }
+
+      const sfxToggleBtn = document.getElementById('sfx-toggle-btn');
+      const sfxIconOff = document.getElementById('sfx-icon-off');
+      const sfxIconOn = document.getElementById('sfx-icon-on');
+
+      function toggleSFX() {
+        sfxEnabled = !sfxEnabled;
+        sfxToggleBtn?.setAttribute('aria-pressed', String(sfxEnabled));
+        sfxToggleBtn?.classList.toggle('text-white', sfxEnabled);
+        sfxToggleBtn?.classList.toggle('border-[var(--accent)]/50', sfxEnabled);
+        sfxToggleBtn?.classList.toggle('text-slate-400', !sfxEnabled);
+        sfxIconOff?.classList.toggle('hidden', sfxEnabled);
+        sfxIconOn?.classList.toggle('hidden', !sfxEnabled);
+        if (sfxEnabled) playGlassSFX('modal');
+        showToast(sfxEnabled ? 'Spatial Glass SFX: ON' : 'Spatial Glass SFX: OFF');
+      }
+      sfxToggleBtn?.addEventListener('click', toggleSFX);
+
+      /* -----------------------------------------------------------------------
+         2. TOAST & ONE-CLICK EMAIL COPY (execCommand for iframe compatibility)
+         ----------------------------------------------------------------------- */
+      const toastEl = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      let toastTimer = null;
+
+      function showToast(message) {
+        if (!toastEl || !toastText) return;
+        toastText.textContent = message;
+        toastEl.classList.add('is-visible');
+        clearTimeout(toastTimer);
+        toastTimer = window.setTimeout(() => toastEl.classList.remove('is-visible'), 2500);
+      }
+
+      function copyEmail() {
+        const email = 'ahmadafiq1506@gmail.com';
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = email;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+        } catch (err) {
+          // Graceful fallback
+        }
+        playGlassSFX('click');
+        showToast('Email copied: ahmadafiq1506@gmail.com');
+      }
+
+      document.querySelectorAll('[data-copy-email]').forEach((btn) => {
+        btn.addEventListener('click', copyEmail);
+      });
+
+      /* -----------------------------------------------------------------------
+         3. LIVE GLASS THEME ENGINE (3 THEMES + CANVAS SYNC)
+         ----------------------------------------------------------------------- */
+      const THEMES = [
+        { id: 'glacier', label: 'Glacier Cyan',  rgb: [34, 211, 238], rgb2: [56, 189, 248] },
+        { id: 'nebula',  label: 'Nebula Violet', rgb: [168, 85, 247], rgb2: [99, 102, 241] },
+        { id: 'emerald', label: 'Emerald Prism', rgb: [16, 185, 129], rgb2: [20, 184, 166] }
+      ];
+      let themeIdx = 0;
+
+      function applyTheme(id, notify = true) {
+        const idx = THEMES.findIndex((t) => t.id === id);
+        if (idx === -1) return;
+        themeIdx = idx;
+        document.documentElement.setAttribute('data-theme', THEMES[themeIdx].id);
+        const nameEl = document.getElementById('theme-name');
+        if (nameEl) nameEl.textContent = THEMES[themeIdx].label;
+        playGlassSFX('tab');
+        if (notify) showToast(`Glass Theme: ${THEMES[themeIdx].label}`);
+      }
+
+      function cycleTheme() {
+        applyTheme(THEMES[(themeIdx + 1) % THEMES.length].id, true);
+      }
+
+      document.getElementById('theme-cycle-btn')?.addEventListener('click', cycleTheme);
+      document.getElementById('dock-theme-btn')?.addEventListener('click', cycleTheme);
+
+      /* -----------------------------------------------------------------------
+         4. INTERACTIVE HTML5 CANVAS PARTICLE CONSTELLATION
+         ----------------------------------------------------------------------- */
+      const canvas = document.getElementById('spatial-canvas');
+      if (canvas && !reduceMotion) {
+        const ctx = canvas.getContext('2d');
+        let cw = 0, ch = 0;
+        const mouse = { x: -9999, y: -9999 };
+        let particles = [];
+
+        function resizeCanvas() {
+          const dpr = Math.min(window.devicePixelRatio || 1, 2);
+          cw = window.innerWidth;
+          ch = window.innerHeight;
+          canvas.width = Math.floor(cw * dpr);
+          canvas.height = Math.floor(ch * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+          const count = cw < 768 ? 28 : 52;
+          particles = Array.from({ length: count }, (_, i) => ({
+            x: Math.random() * cw,
+            y: Math.random() * ch,
+            vx: (Math.random() - 0.5) * 0.36,
+            vy: (Math.random() - 0.5) * 0.36,
+            r: 1.4 + Math.random() * 2.2,
+            alt: i % 2 === 0
+          }));
+        }
+
+        window.addEventListener('resize', resizeCanvas, { passive: true });
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+        window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+        resizeCanvas();
+
+        function drawConstellation() {
+          ctx.clearRect(0, 0, cw, ch);
+          const t = THEMES[themeIdx];
+
+          for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > cw) p.vx *= -1;
+            if (p.y < 0 || p.y > ch) p.vy *= -1;
+
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 150 && dist > 1) {
+              p.x -= (dx / dist) * 0.5;
+              p.y -= (dy / dist) * 0.5;
+            }
+
+            const [r, g, b] = p.alt ? t.rgb : t.rgb2;
+            const alpha = dist < 170 ? 0.65 : 0.28;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+            ctx.fill();
+
+            for (let j = i + 1; j < particles.length; j++) {
+              const p2 = particles[j];
+              const lDist = Math.hypot(p.x - p2.x, p.y - p2.y);
+              if (lDist < 125) {
+                ctx.beginPath();
+                ctx.moveTo(p.x, p.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${(1 - lDist / 125) * 0.15})`;
+                ctx.lineWidth = 0.85;
+                ctx.stroke();
+              }
+            }
+          }
+          requestAnimationFrame(drawConstellation);
+        }
+        requestAnimationFrame(drawConstellation);
+      }
+
+      /* -----------------------------------------------------------------------
+         5. MAGNETIC CTA BUTTONS (Desktop Only) & HERO ROTATING ROLE
+         ----------------------------------------------------------------------- */
+      if (finePointer && !reduceMotion) {
+        document.querySelectorAll('[data-magnetic]').forEach((btn) => {
+          btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const mx = (e.clientX - rect.left - rect.width / 2) * 0.22;
+            const my = (e.clientY - rect.top - rect.height / 2) * 0.22;
+            btn.style.transform = `translate3d(${mx.toFixed(1)}px, ${my.toFixed(1)}px, 0)`;
+          });
+          btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+          });
+        });
+      }
+
+      const ROLES = [
+        'Multimedia & Web System Developer',
+        'Unity 6 Game Developer',
+        'Interactive UI Engineer'
+      ];
+      const heroRoleEl = document.getElementById('hero-role');
+      if (heroRoleEl && !reduceMotion) {
+        let rIdx = 0;
+        window.setInterval(() => {
+          heroRoleEl.classList.add('out');
+          window.setTimeout(() => {
+            rIdx = (rIdx + 1) % ROLES.length;
+            heroRoleEl.textContent = ROLES[rIdx];
+            heroRoleEl.classList.remove('out');
+            heroRoleEl.classList.add('in');
+            requestAnimationFrame(() => requestAnimationFrame(() => heroRoleEl.classList.remove('in')));
+          }, 280);
+        }, 2900);
+      }
+
+      /* -----------------------------------------------------------------------
+         6. HERO 3D TILT DEVELOPER LAB (4 REAL INTERACTIVE TABS)
+         ----------------------------------------------------------------------- */
+      const tiltCard = document.getElementById('hero-tilt-card');
+      const tiltSheen = document.getElementById('hero-tilt-sheen');
+
+      if (tiltCard && finePointer && !reduceMotion) {
+        tiltCard.addEventListener('mousemove', (e) => {
+          const rect = tiltCard.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          const y = (e.clientY - rect.top) / rect.height;
+          const rotY = (x - 0.5) * 9;
+          const rotX = (0.5 - y) * 9;
+          tiltCard.style.transform = `rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+          if (tiltSheen) {
+            tiltSheen.style.setProperty('--sx', `${(x * 100).toFixed(1)}%`);
+            tiltSheen.style.setProperty('--sy', `${(y * 100).toFixed(1)}%`);
+          }
+        });
+        tiltCard.addEventListener('mouseleave', () => {
+          tiltCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+      }
+
+      const labTabs = document.querySelectorAll('.lab-tab');
+      const labPanels = {
+        web: document.getElementById('lab-panel-web'),
+        unity: document.getElementById('lab-panel-unity'),
+        game: document.getElementById('lab-panel-game'),
+        terminal: document.getElementById('lab-panel-terminal')
+      };
+
+      function switchLabTab(target) {
+        labTabs.forEach((t) => {
+          const active = t.dataset.labTab === target;
+          t.classList.toggle('bg-white/15', active);
+          t.classList.toggle('text-white', active);
+          t.classList.toggle('text-slate-400', !active);
+        });
+        Object.entries(labPanels).forEach(([key, el]) => {
+          if (el) el.classList.toggle('hidden', key !== target);
+        });
+        playGlassSFX('tab');
+      }
+
+      labTabs.forEach((tab) => {
+        tab.addEventListener('click', () => switchLabTab(tab.dataset.labTab));
+      });
+
+      // --- TAB 1: Architectural Window & Daylight Simulator ---
+      const louverSlider = document.getElementById('louver-slider');
+      const archStage = document.getElementById('arch-stage');
+      const archGlow = document.getElementById('arch-glow');
+      const archSlats = document.querySelectorAll('.arch-slat');
+      const louverAngleLabel = document.getElementById('louver-angle-label');
+      const louverPctBadge = document.getElementById('louver-pct-badge');
+      const luxReadout = document.getElementById('lux-readout');
+      const glareReadout = document.getElementById('glare-readout');
+      const ambienceToggle = document.getElementById('ambience-toggle');
+      const ambienceIcon = document.getElementById('ambience-icon');
+      const ambienceText = document.getElementById('ambience-text');
+      const matLabel = document.getElementById('mat-label');
+
+      const MATERIALS = {
+        nordic:   { name: 'Nordic White',   bg: 'linear-gradient(90deg, rgba(241,245,249,0.58), rgba(226,232,240,0.34), rgba(241,245,249,0.55))', border: 'rgba(255,255,255,0.45)', tint: 'rgba(56,189,248,0.62)' },
+        obsidian: { name: 'Obsidian Slate', bg: 'linear-gradient(90deg, rgba(30,41,59,0.92), rgba(51,65,85,0.82), rgba(15,23,42,0.94))', border: 'rgba(148,163,184,0.35)', tint: 'rgba(99,102,241,0.58)' },
+        oak:      { name: 'Warm Oak',       bg: 'linear-gradient(90deg, rgba(180,83,9,0.86), rgba(217,119,6,0.72), rgba(146,64,14,0.88))', border: 'rgba(251,191,36,0.45)', tint: 'rgba(251,191,36,0.56)' }
+      };
+      let isDayAmbience = true;
+      let activeMaterial = 'nordic';
+
+      function updateWebSim() {
+        const val = Number(louverSlider ? louverSlider.value : 68);
+        const mat = MATERIALS[activeMaterial];
+        const scaleY = (1.18 - (val / 100) * 0.68).toFixed(2);
+
+        archSlats.forEach((s) => {
+          s.style.transform = `scaleY(${scaleY})`;
+          s.style.background = mat.bg;
+          s.style.borderColor = mat.border;
+        });
+
+        if (archGlow) {
+          archGlow.style.opacity = (0.14 + (val / 100) * 0.84).toFixed(2);
+          archGlow.style.background = isDayAmbience
+            ? `radial-gradient(circle at 50% 18%, ${mat.tint}, rgba(251,191,36,0.2) 55%, transparent 82%)`
+            : `radial-gradient(circle at 50% 22%, rgba(129,140,248,0.48), rgba(15,23,42,0.55) 60%, transparent 85%)`;
+        }
+        if (archStage) {
+          archStage.style.backgroundColor = isDayAmbience ? 'rgba(15, 23, 42, 0.84)' : 'rgba(3, 6, 16, 0.96)';
+        }
+
+        const lux = Math.round((isDayAmbience ? 620 : 185) * (val / 100) + (isDayAmbience ? 40 : 10));
+        const glare = val < 30 ? 'Minimal' : val < 75 ? 'Low' : isDayAmbience ? 'High' : 'Balanced';
+        if (louverAngleLabel) louverAngleLabel.textContent = `Angle: ${val}%`;
+        if (louverPctBadge) louverPctBadge.textContent = `${val}%`;
+        if (luxReadout) luxReadout.textContent = `${lux} lux`;
+        if (glareReadout) glareReadout.textContent = `Glare: ${glare}`;
+        if (matLabel) matLabel.textContent = mat.name;
+      }
+
+      louverSlider?.addEventListener('input', updateWebSim);
+      ambienceToggle?.addEventListener('click', () => {
+        isDayAmbience = !isDayAmbience;
+        if (ambienceIcon) ambienceIcon.textContent = isDayAmbience ? '☀️' : '🌙';
+        if (ambienceText) ambienceText.textContent = isDayAmbience ? 'Day Mode' : 'Night Mode';
+        playGlassSFX('click');
+        updateWebSim();
+      });
+
+      document.querySelectorAll('.mat-swatch').forEach((sw) => {
+        sw.addEventListener('click', () => {
+          activeMaterial = sw.dataset.mat;
+          document.querySelectorAll('.mat-swatch').forEach((b) => {
+            b.classList.remove('ring-2', 'ring-[var(--accent)]', 'ring-offset-2', 'ring-offset-slate-950');
+          });
+          sw.classList.add('ring-2', 'ring-[var(--accent)]', 'ring-offset-2', 'ring-offset-slate-950');
+          playGlassSFX('click');
+          updateWebSim();
+        });
+      });
+      updateWebSim();
+
+      // --- TAB 2: Unity 6 FYP Safety Inspector + Hazard Radar Scan ---
+      const ppeState = { helmet: false, vest: false, harness: false, boots: false };
+      const riskBar = document.getElementById('risk-bar');
+      const riskValueText = document.getElementById('risk-value-text');
+      const riskPill = document.getElementById('risk-status-pill');
+      const csharpLog = document.getElementById('csharp-log');
+      const radarBeam = document.getElementById('radar-beam');
+
+      function updateRiskHUD(note) {
+        const equipped = Object.values(ppeState).filter(Boolean).length;
+        const risk = 100 - equipped * 25;
+        const stateStr = risk === 0 ? 'SAFE' : risk <= 50 ? 'MODERATE' : 'CRITICAL';
+
+        if (riskBar) {
+          riskBar.style.width = `${Math.max(4, risk)}%`;
+          riskBar.className = 'h-full rounded-full transition-all duration-500 ' + (
+            risk >= 75 ? 'bg-gradient-to-r from-rose-500 to-amber-400' :
+            risk >= 25 ? 'bg-gradient-to-r from-amber-400 to-sky-400' :
+            'bg-gradient-to-r from-emerald-400 to-teal-300'
+          );
+        }
+        if (riskValueText) {
+          riskValueText.textContent = `${risk}%`;
+          riskValueText.className = 'font-heading text-2xl font-extrabold ' + (
+            risk >= 75 ? 'text-rose-400' : risk >= 25 ? 'text-amber-300' : 'text-emerald-400'
+          );
+        }
+        if (riskPill) {
+          if (risk >= 75) {
+            riskPill.textContent = `${risk}% CRITICAL`;
+            riskPill.className = 'rounded-full bg-rose-500/20 border border-rose-400/40 px-2.5 py-1 font-mono text-[11px] font-semibold text-rose-300';
+          } else if (risk >= 25) {
+            riskPill.textContent = `${risk}% MODERATE`;
+            riskPill.className = 'rounded-full bg-amber-400/20 border border-amber-400/40 px-2.5 py-1 font-mono text-[11px] font-semibold text-amber-200';
+          } else {
+            riskPill.textContent = '0% SAFE';
+            riskPill.className = 'rounded-full bg-emerald-400/20 border border-emerald-400/40 px-2.5 py-1 font-mono text-[11px] font-semibold text-emerald-300';
+          }
+        }
+        if (csharpLog) {
+          csharpLog.textContent = `[Unity6.RiskManager] ${note ? note + ' => ' : ''}Risk=${risk}% | State=${stateStr} | PPE=${equipped}/4`;
+        }
+      }
+
+      document.querySelectorAll('.ppe-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const item = btn.dataset.ppe;
+          ppeState[item] = !ppeState[item];
+          const on = ppeState[item];
+          btn.classList.toggle('border-emerald-400/50', on);
+          btn.classList.toggle('bg-emerald-400/15', on);
+          const dot = btn.querySelector('.ppe-dot');
+          const st = btn.querySelector('.ppe-state');
+          if (dot) {
+            dot.classList.toggle('bg-emerald-400', on);
+            dot.classList.toggle('bg-rose-400', !on);
+          }
+          if (st) {
+            st.textContent = on ? 'Equipped' : 'Unverified';
+            st.classList.toggle('text-emerald-300', on);
+            st.classList.toggle('text-slate-400', !on);
+          }
+          playGlassSFX('click');
+          updateRiskHUD(`TogglePPE("${item}")`);
+        });
+      });
+
+      document.getElementById('hazard-scan-btn')?.addEventListener('click', () => {
+        playGlassSFX('scan');
+        if (radarBeam) {
+          radarBeam.classList.remove('scanning');
+          void radarBeam.offsetWidth;
+          radarBeam.classList.add('scanning');
+        }
+        const missing = Object.entries(ppeState).filter(([, v]) => !v).map(([k]) => k);
+        const msg = missing.length ? `HazardScan: Missing [${missing.join(', ')}]` : 'HazardScan: All 4 PPE Verified · Site Cleared';
+        updateRiskHUD(msg);
+      });
+
+      // --- TAB 3: Playable 15-Second "Cyber Orb Reflex" Mini-Game ---
+      const orbArena = document.getElementById('orb-arena');
+      const orbOverlay = document.getElementById('orb-overlay');
+      const orbOverlayTitle = document.getElementById('orb-overlay-title');
+      const orbOverlaySub = document.getElementById('orb-overlay-sub');
+      const orbStartBtn = document.getElementById('orb-start-btn');
+      const gameScoreEl = document.getElementById('game-score');
+      const gameComboEl = document.getElementById('game-combo');
+      const gameTimeEl = document.getElementById('game-time');
+      const gameBestEl = document.getElementById('game-best');
+
+      let gameRunning = false;
+      let gameScore = 0;
+      let gameCombo = 1;
+      let gameBest = 0;
+      let gameEndTime = 0;
+      let lastHitTime = 0;
+      let gameRaf = null;
+
+      try {
+        gameBest = Number(localStorage.getItem('afiq_orb_best') || 0);
+      } catch (e) {
+        gameBest = 0;
+      }
+      if (gameBestEl) gameBestEl.textContent = String(gameBest);
+
+      function clearOrbs() {
+        orbArena?.querySelectorAll('.cyber-orb').forEach((el) => el.remove());
+      }
+
+      function spawnOrb() {
+        if (!gameRunning || !orbArena) return;
+        const size = 34 + Math.floor(Math.random() * 14);
+        const xPct = 14 + Math.random() * 72;
+        const yPct = 18 + Math.random() * 64;
+
+        const orb = document.createElement('button');
+        orb.type = 'button';
+        orb.setAttribute('aria-label', 'Hit cyber orb');
+        orb.className = 'cyber-orb';
+        orb.style.width = `${size}px`;
+        orb.style.height = `${size}px`;
+        orb.style.left = `${xPct}%`;
+        orb.style.top = `${yPct}%`;
+
+        orb.addEventListener('pointerdown', (e) => {
+          e.stopPropagation();
+          if (!gameRunning) return;
+          const now = performance.now();
+          gameCombo = (now - lastHitTime < 1100) ? Math.min(8, gameCombo + 1) : 1;
+          lastHitTime = now;
+          const pts = 10 * gameCombo;
+          gameScore += pts;
+
+          if (gameScoreEl) gameScoreEl.textContent = String(gameScore);
+          if (gameComboEl) gameComboEl.textContent = `x${gameCombo}`;
+          playGlassSFX('hit');
+
+          const pop = document.createElement('span');
+          pop.className = 'score-pop';
+          pop.textContent = `+${pts}`;
+          pop.style.left = orb.style.left;
+          pop.style.top = orb.style.top;
+          orbArena.appendChild(pop);
+          window.setTimeout(() => pop.remove(), 600);
+
+          orb.remove();
+          spawnOrb();
+        });
+
+        orbArena.appendChild(orb);
+      }
+
+      function finishGame() {
+        gameRunning = false;
+        cancelAnimationFrame(gameRaf);
+        clearOrbs();
+        if (gameTimeEl) gameTimeEl.textContent = '0.0s';
+
+        let isNewBest = false;
+        if (gameScore > gameBest) {
+          gameBest = gameScore;
+          isNewBest = true;
+          if (gameBestEl) gameBestEl.textContent = String(gameBest);
+          try { localStorage.setItem('afiq_orb_best', String(gameBest)); } catch (e) {}
+        }
+
+        if (orbOverlayTitle) orbOverlayTitle.textContent = isNewBest ? `New High Score: ${gameScore}!` : `Final Score: ${gameScore}`;
+        if (orbOverlaySub) orbOverlaySub.textContent = isNewBest ? 'Sharp reflexes! Your best score is saved locally.' : `Best Score: ${gameBest}. Ready for another 15s run?`;
+        if (orbStartBtn) orbStartBtn.textContent = 'Play Again';
+        orbOverlay?.classList.remove('hidden');
+        playGlassSFX('modal');
+      }
+
+      function tickGame() {
+        if (!gameRunning) return;
+        const left = Math.max(0, (gameEndTime - performance.now()) / 1000);
+        if (gameTimeEl) gameTimeEl.textContent = `${left.toFixed(1)}s`;
+        if (left <= 0) {
+          finishGame();
+        } else {
+          gameRaf = requestAnimationFrame(tickGame);
+        }
+      }
+
+      orbStartBtn?.addEventListener('click', () => {
+        clearOrbs();
+        gameRunning = true;
+        gameScore = 0;
+        gameCombo = 1;
+        lastHitTime = 0;
+        gameEndTime = performance.now() + 15000;
+        if (gameScoreEl) gameScoreEl.textContent = '0';
+        if (gameComboEl) gameComboEl.textContent = 'x1';
+        orbOverlay?.classList.add('hidden');
+        playGlassSFX('click');
+        spawnOrb();
+        spawnOrb();
+        gameRaf = requestAnimationFrame(tickGame);
+      });
+
+      // --- TAB 4: Interactive CLI Terminal ---
+      const termOutput = document.getElementById('term-output');
+      const termForm = document.getElementById('term-form');
+      const termInput = document.getElementById('term-input');
+
+      const TERM_DATA = {
+        help: 'Commands: about, status, stack, projects, theme, contact, clear.',
+        about: 'Ahmad Afiq · BITE Student at UTeM (CGPA 3.20) · Multimedia & Web System Application Intern & Unity 6 Game Developer.',
+        status: 'Currently interning (Sep 2026 – Mar 2027) building a production company website & web system. Actively OPEN for Full-Time roles starting April 2027.',
+        stack: 'Web: HTML5, CSS3, Tailwind, JS, PHP, MySQL | Game: Unity 6, URP, C#, Unreal, Godot | Media & QA: Blender, After Effects, SIT Testing.',
+        projects: '10 Projects — Top highlights: [01] Company Website & Web System, [02] Construction Safety Training Sim (Unity 6), [03] Eco-Tech Simulator, [07] Online Shopping Portal.',
+        contact: 'Email: ahmadafiq1506@gmail.com | GitHub: @Ahmadafiq156 | TikTok: @cikgumlbb (100K+). Press Ctrl + K for instant actions.'
+      };
+
+      function runTerminalCommand(raw) {
+        if (!termOutput) return;
+        const cmd = raw.trim().toLowerCase();
+        if (!cmd) return;
+        playGlassSFX('click');
+
+        if (cmd === 'clear') {
+          termOutput.innerHTML = `<div class="text-slate-400">Console cleared. Type <span class="text-accent">help</span> or click a chip above.</div>`;
+          return;
+        }
+        if (cmd === 'theme') {
+          cycleTheme();
+          const entry = document.createElement('div');
+          entry.innerHTML = `<div><span class="text-accent">afiq@dev:~$</span> <span class="text-white">theme</span></div><p class="mt-0.5 text-slate-300">Switched Spatial Glass Theme to <span class="text-accent">${THEMES[themeIdx].label}</span>.</p>`;
+          termOutput.appendChild(entry);
+          termOutput.scrollTop = termOutput.scrollHeight;
+          return;
+        }
+
+        const reply = TERM_DATA[cmd] || `Unknown command "${cmd}". Try: help, about, status, stack, projects, theme, contact, clear.`;
+        const entry = document.createElement('div');
+        entry.innerHTML = `<div><span class="text-accent">afiq@dev:~$</span> <span class="text-white">${cmd.replace(/</g, '&lt;')}</span></div><p class="mt-0.5 text-slate-300">${reply}</p>`;
+        termOutput.appendChild(entry);
+        termOutput.scrollTop = termOutput.scrollHeight;
+      }
+
+      termForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!termInput) return;
+        runTerminalCommand(termInput.value);
+        termInput.value = '';
+      });
+      document.querySelectorAll('.term-chip').forEach((chip) => {
+        chip.addEventListener('click', () => runTerminalCommand(chip.dataset.termCmd));
+      });
+
+      /* -----------------------------------------------------------------------
+         7. STUDIO-ENHANCED PORTRAIT: 3D PARALLAX + FALLBACK + 5 RIM-LIGHTS
+         ----------------------------------------------------------------------- */
+      const portraitCard = document.getElementById('portrait-card');
+      const portraitImg = document.getElementById('studio-portrait-img');
+      const portraitFallback = document.getElementById('portrait-fallback');
+      const portraitFileInput = document.getElementById('portrait-file-input');
+      const haloPrimary = document.getElementById('studio-halo-primary');
+      const haloRing = document.getElementById('studio-halo-ring');
+      const studioPresetLabel = document.getElementById('studio-preset-label');
+
+      if (portraitCard && finePointer && !reduceMotion) {
+        portraitCard.addEventListener('mousemove', (e) => {
+          const r = portraitCard.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - 0.5;
+          const y = (e.clientY - r.top) / r.height - 0.5;
+          if (portraitImg && !portraitImg.classList.contains('hidden')) {
+            portraitImg.style.transform = `translate3d(${(x * 10).toFixed(1)}px, ${(y * 6).toFixed(1)}px, 0) scale(1.03)`;
+          }
+        });
+        portraitCard.addEventListener('mouseleave', () => {
+          if (portraitImg) portraitImg.style.transform = '';
+        });
+      }
+
+      if (portraitImg) {
+        let triedJpg = false;
+        portraitImg.addEventListener('error', () => {
+          if (!triedJpg) {
+            triedJpg = true;
+            portraitImg.src = 'assets/gambo.jpg';
+          } else {
+            portraitImg.classList.add('hidden');
+            portraitFallback?.classList.remove('hidden');
+            portraitFallback?.classList.add('flex');
+          }
+        });
+      }
+
+      portraitFileInput?.addEventListener('change', (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (!file || !portraitImg) return;
+        portraitImg.src = URL.createObjectURL(file);
+        portraitImg.classList.remove('hidden');
+        portraitFallback?.classList.add('hidden');
+        portraitFallback?.classList.remove('flex');
+        playGlassSFX('modal');
+        showToast('Portrait framed with Studio Rim-Lighting!');
+      });
+
+      const STUDIO_PRESETS = {
+        cyan: {
+          label: 'Cyan Rim',
+          halo: 'radial-gradient(circle, rgba(34,211,238,0.88) 0%, rgba(56,189,248,0.35) 55%, transparent 75%)',
+          ringBorder: 'rgba(34,211,238,0.55)',
+          ringShadow: '0 0 55px rgba(34,211,238,0.48)',
+          filter: 'contrast(1.08) saturate(1.12) drop-shadow(0 0 24px rgba(34,211,238,0.58))'
+        },
+        violet: {
+          label: 'Violet Studio',
+          halo: 'radial-gradient(circle, rgba(168,85,247,0.88) 0%, rgba(99,102,241,0.36) 55%, transparent 75%)',
+          ringBorder: 'rgba(168,85,247,0.58)',
+          ringShadow: '0 0 55px rgba(168,85,247,0.48)',
+          filter: 'contrast(1.09) saturate(1.14) drop-shadow(0 0 26px rgba(168,85,247,0.6))'
+        },
+        emerald: {
+          label: 'Emerald Glow',
+          halo: 'radial-gradient(circle, rgba(16,185,129,0.88) 0%, rgba(20,184,166,0.35) 55%, transparent 75%)',
+          ringBorder: 'rgba(16,185,129,0.58)',
+          ringShadow: '0 0 55px rgba(16,185,129,0.48)',
+          filter: 'contrast(1.08) saturate(1.12) drop-shadow(0 0 24px rgba(16,185,129,0.58))'
+        },
+        gold: {
+          label: 'Warm Gold',
+          halo: 'radial-gradient(circle, rgba(251,191,36,0.85) 0%, rgba(245,158,11,0.34) 55%, transparent 75%)',
+          ringBorder: 'rgba(251,191,36,0.55)',
+          ringShadow: '0 0 55px rgba(251,191,36,0.42)',
+          filter: 'contrast(1.09) saturate(1.15) drop-shadow(0 0 24px rgba(251,191,36,0.55))'
+        },
+        natural: {
+          label: 'Natural Studio',
+          halo: 'radial-gradient(circle, rgba(226,232,240,0.42) 0%, rgba(148,163,184,0.16) 55%, transparent 75%)',
+          ringBorder: 'rgba(255,255,255,0.28)',
+          ringShadow: '0 0 40px rgba(255,255,255,0.18)',
+          filter: 'contrast(1.05) saturate(1.04) drop-shadow(0 12px 24px rgba(0,0,0,0.65))'
+        }
+      };
+
+      document.querySelectorAll('.studio-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const preset = STUDIO_PRESETS[btn.dataset.studio];
+          if (!preset) return;
+          document.querySelectorAll('.studio-btn').forEach((b) => {
+            b.className = 'studio-btn rounded-xl border border-white/10 bg-white/[0.04] py-1.5 font-mono text-[10px] sm:text-[11px] font-medium text-slate-300 transition hover:text-white';
+          });
+          btn.className = 'studio-btn active rounded-xl border border-[var(--accent)]/60 bg-[var(--accent)]/20 py-1.5 font-mono text-[10px] sm:text-[11px] font-semibold text-white transition';
+          if (haloPrimary) haloPrimary.style.background = preset.halo;
+          if (haloRing) {
+            haloRing.style.borderColor = preset.ringBorder;
+            haloRing.style.boxShadow = preset.ringShadow;
+          }
+          if (portraitImg) portraitImg.style.filter = preset.filter;
+          if (studioPresetLabel) studioPresetLabel.textContent = preset.label;
+          playGlassSFX('click');
+        });
+      });
+
+      /* -----------------------------------------------------------------------
+         8. 10-PROJECT GLASS GALLERY + CASE STUDY MODAL
+         ----------------------------------------------------------------------- */
+      const PROJECTS = [
+        {
+          idx: '01',
+          title: 'Company Website & Interactive Web System',
+          cat: 'web',
+          catLabel: 'Web & Systems',
+          status: 'Production Intern Project · Featured',
+          role: 'Multimedia & Web System Application Intern',
+          featured: true,
+          img: '',
+          tags: ['HTML5/CSS3', 'JavaScript', 'Web System', 'Scroll UX'],
+          summary: 'Redesigned company website with animated architectural UI, interactive catalog transitions, and web system architecture.',
+          challenge: 'Modernize the company’s digital presence into a fast, high-trust web platform while streamlining interactive product exploration and customer inquiry workflows.',
+          highlights: [
+            'Designed and engineered the responsive company website with fluid scroll-driven architectural transitions.',
+            'Built interactive visual preview components and modular frontend state logic.',
+            'Optimized performance and mobile ergonomics across all screen sizes.'
+          ],
+          link: null,
+          fallbackTheme: 'from-cyan-500/25 via-indigo-500/20 to-teal-400/20',
+          fallbackIcon: 'arch-live'
+        },
+        {
+          idx: '02',
+          title: 'Construction Safety Training Simulation',
+          cat: 'game',
+          catLabel: 'Unity & Games',
+          status: 'Final Year Project (BITE) · Featured',
+          role: 'Solo Developer',
+          featured: true,
+          img: 'assets/psm.png',
+          tags: ['Unity 6', 'C#', 'URP', 'Simulation'],
+          summary: 'First-person Unity 6 safety simulation featuring PPE inspection, hazard decisions, and a dynamic risk meter.',
+          challenge: 'Static safety slides fail to build real situational awareness. The goal was to craft a realistic first-person interactive simulation where safety choices visibly shift site risk.',
+          highlights: [
+            'Architected modular C# raycast inspection workflows for worker PPE verification and hazard spotting.',
+            'Built a real-time dynamic Risk Meter responding immediately to player safety decisions.',
+            'Rendered in Unity 6 + URP with clear HUD feedback and iterative playtesting.'
+          ],
+          link: null,
+          fallbackTheme: 'from-amber-400/25 via-sky-500/20 to-emerald-400/20',
+          fallbackIcon: 'unity-safety'
+        },
+        {
+          idx: '03',
+          title: 'Eco-Tech Simulator',
+          cat: 'game',
+          catLabel: 'Unity & Games',
+          status: 'TVET Simulation',
+          role: 'Simulation Contributor',
+          featured: false,
+          img: 'assets/eco-tech.png',
+          tags: ['Unity', 'Interaction', 'Testing'],
+          summary: 'Interactive electronics-repair training simulation built for TVET engineering learners.',
+          challenge: 'Provide TVET learners with a repeatable, risk-free virtual workbench to practice electronics inspection and repair procedures.',
+          highlights: [
+            'Contributed interactive repair flows and guided step-by-step learner feedback.',
+            'Executed structured testing to refine usability and technical accuracy.',
+            'Polished UI prompts for clear engineering comprehension.'
+          ],
+          link: null,
+          fallbackTheme: 'from-emerald-400/25 via-teal-500/20 to-cyan-500/20',
+          fallbackIcon: 'circuit'
+        },
+        {
+          idx: '04',
+          title: 'Sneak Out',
+          cat: 'game',
+          catLabel: 'Unity & Games',
+          status: 'Workshop II · Completed',
+          role: 'Game Artist & Level Designer',
+          featured: false,
+          img: 'assets/workshop2.webp',
+          tags: ['Game Art', 'Level Design', 'Teamwork'],
+          summary: 'Collaborative stealth game shaped through cohesive visual direction, custom assets, and multi-route levels.',
+          challenge: 'Design readable stealth spaces where players can intuitively read sightlines, cover paths, and patrol timing.',
+          highlights: [
+            'Directed environment art, lighting mood, and custom visual assets.',
+            'Balanced multi-route stealth layouts through iterative team playtests.',
+            'Coordinated closely across art and gameplay engineering.'
+          ],
+          link: null,
+          fallbackTheme: 'from-indigo-500/30 via-purple-500/20 to-sky-400/20',
+          fallbackIcon: 'stealth'
+        },
+        {
+          idx: '05',
+          title: 'Shadow Escape',
+          cat: 'game',
+          catLabel: 'Unity & Games',
+          status: 'Solo Unity Game · Completed',
+          role: 'Solo Developer',
+          featured: false,
+          img: 'assets/shadow-escape.png',
+          tags: ['Unity', 'C#', 'Level Design'],
+          summary: 'Solo Unity C# game built end-to-end from core concept through gameplay loops and level iteration.',
+          challenge: 'Deliver a complete, atmospheric solo game experience covering mechanics coding, detection states, and progressive level design.',
+          highlights: [
+            'Engineered player movement, enemy detection states, and win/loss loops in C#.',
+            'Iterated lighting contrast and pacing for strong spatial readability.',
+            'Delivered complete menus, audio cues, and playable build.'
+          ],
+          link: null,
+          fallbackTheme: 'from-violet-500/30 via-slate-700/30 to-cyan-400/20',
+          fallbackIcon: 'shadow'
+        },
+        {
+          idx: '06',
+          title: 'Rooftop Runner',
+          cat: 'game',
+          catLabel: 'Unity & Games',
+          status: 'Solo Unity Prototype · Completed',
+          role: 'Solo Developer',
+          featured: false,
+          img: 'assets/rooftop-runner.png',
+          tags: ['Gameplay', 'Prototype', 'Level Design'],
+          summary: 'Fast-paced gameplay prototype focused on crisp movement physics, readable routes, and momentum.',
+          challenge: 'Tune jump arcs, input responsiveness, and obstacle silhouettes so high-speed platforming feels tight and rewarding.',
+          highlights: [
+            'Fine-tuned movement physics and jump feel for snappy control.',
+            'Structured rooftop silhouettes for clear forward sightlines.',
+            'Rapidly prototyped from concept into a tight playable loop.'
+          ],
+          link: null,
+          fallbackTheme: 'from-sky-400/30 via-cyan-500/20 to-indigo-500/20',
+          fallbackIcon: 'runner'
+        },
+        {
+          idx: '07',
+          title: 'Online Shopping Portal',
+          cat: 'web',
+          catLabel: 'Web & Systems',
+          status: 'Diploma Final Project · PHP/MySQL',
+          role: 'Full-Stack Developer',
+          featured: false,
+          img: 'assets/fyp.png',
+          tags: ['PHP', 'MySQL', 'Authentication'],
+          summary: 'Full-stack e-commerce platform with authentication, catalog management, cart, and checkout.',
+          challenge: 'Build a secure, database-driven online storefront handling both customer shopping journeys and admin inventory CRUD.',
+          highlights: [
+            'Implemented user authentication, session security, and admin catalog management.',
+            'Built dynamic shopping cart, order summary, and checkout flows.',
+            'Designed normalized MySQL relational schemas for products and orders.'
+          ],
+          link: null,
+          fallbackTheme: 'from-cyan-400/25 via-blue-500/20 to-indigo-400/20',
+          fallbackIcon: 'shop'
+        },
+        {
+          idx: '08',
+          title: 'Restaurant Ordering System',
+          cat: 'web',
+          catLabel: 'Web & Systems',
+          status: 'Workshop I · Web CRUD',
+          role: 'Solo Developer',
+          featured: false,
+          img: 'assets/workshop1.png',
+          tags: ['Web', 'Database', 'CRUD'],
+          summary: 'Database-backed web application for menu browsing, ordering workflows, and record management.',
+          challenge: 'Replace manual order tracking with a structured web CRUD system that keeps menus and orders synchronized.',
+          highlights: [
+            'Developed end-to-end CRUD operations for menus and customer orders.',
+            'Streamlined browsing and order submission with clear status feedback.',
+            'Structured relational persistence with clean input validation.'
+          ],
+          link: null,
+          fallbackTheme: 'from-teal-400/25 via-emerald-500/20 to-sky-400/20',
+          fallbackIcon: 'food'
+        },
+        {
+          idx: '09',
+          title: 'MISSION: DELIVERED',
+          cat: 'motion',
+          catLabel: 'Video & Motion',
+          status: 'Short Film · In-Page Cinema',
+          role: 'Video Production',
+          featured: false,
+          img: 'https://img.youtube.com/vi/8B_SRydN_ME/hqdefault.jpg',
+          youtubeId: '8B_SRydN_ME',
+          tags: ['Editing', 'Audio Sync', 'Storytelling'],
+          summary: 'Short film production highlighting timeline editing, audio synchronization, and narrative pacing.',
+          challenge: 'Maintain sharp pacing and seamless scene transitions while synchronizing dialogue, Foley, and music cues.',
+          highlights: [
+            'Edited multi-scene sequences with tight continuity and tempo.',
+            'Layered sound effects and music to heighten narrative beats.',
+            'Delivered cohesive color treatment and final YouTube release.'
+          ],
+          link: 'https://youtu.be/8B_SRydN_ME',
+          fallbackTheme: 'from-rose-500/25 via-purple-500/20 to-indigo-500/20',
+          fallbackIcon: 'film'
+        },
+        {
+          idx: '10',
+          title: 'Kinetic Typography',
+          cat: 'motion',
+          catLabel: 'Video & Motion',
+          status: 'Motion Graphics · In-Page Cinema',
+          role: 'Motion Designer',
+          featured: false,
+          img: 'https://img.youtube.com/vi/17cvcFdY01Q/hqdefault.jpg',
+          youtubeId: '17cvcFdY01Q',
+          tags: ['After Effects', 'Typography', 'Motion'],
+          summary: 'Expressive animated typography study exploring rhythm, timing, and dynamic composition.',
+          challenge: 'Translate spoken audio energy into crisp, readable kinetic typography using custom easing and frame-accurate timing.',
+          highlights: [
+            'Synchronized typographic entrances and camera moves to exact audio beats.',
+            'Crafted custom speed-graph curves in After Effects for fluid motion.',
+            'Balanced bold visual hierarchy with high viewer legibility.'
+          ],
+          link: 'https://youtu.be/17cvcFdY01Q',
+          fallbackTheme: 'from-fuchsia-500/25 via-indigo-500/20 to-cyan-400/20',
+          fallbackIcon: 'motion'
+        }
+      ];
+
+      function renderGlassFallback(p) {
+        if (p.fallbackIcon === 'arch-live') {
+          return `
+            <div class="absolute inset-0 bg-gradient-to-br ${p.fallbackTheme} flex flex-col items-center justify-center p-6">
+              <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 18px 18px;"></div>
+              <div class="relative z-10 w-56 max-w-full rounded-2xl glass-pill p-3.5 space-y-2 shadow-2xl">
+                <div class="flex items-center justify-between text-[9px] font-mono text-slate-300">
+                  <span class="text-accent">LIVE ARCHITECTURE UI</span>
+                  <span>● 60FPS</span>
+                </div>
+                <div class="space-y-1.5 py-1">
+                  <div class="arch-mini-slat h-2 w-full rounded-full bg-white/40" style="animation-delay: 0s;"></div>
+                  <div class="arch-mini-slat h-2 w-full rounded-full bg-cyan-300/45" style="animation-delay: 0.25s;"></div>
+                  <div class="arch-mini-slat h-2 w-full rounded-full bg-white/35" style="animation-delay: 0.5s;"></div>
+                  <div class="arch-mini-slat h-2 w-full rounded-full bg-indigo-300/45" style="animation-delay: 0.75s;"></div>
+                </div>
+                <div class="flex items-center justify-between pt-1 border-t border-white/10 font-mono text-[9px] text-slate-300">
+                  <span>Interactive System</span>
+                  <span class="text-emerald-300">Production</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+
+        const icons = {
+          'unity-safety': `<path d="M20 5l13 7v14l-13 7-13-7V12l13-7z" stroke="currentColor" stroke-width="1.6"/><path d="M20 19v14M20 19l13-7M20 19L7 12" stroke="currentColor" stroke-width="1.6"/>`,
+          'circuit': `<circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M20 6v8M20 26v8M6 20h8M26 20h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+          'stealth': `<path d="M6 20s5-9 14-9 14 9 14 9-5 9-14 9-14-9-14-9z" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="1.6"/>`,
+          'shadow': `<path d="M26 24a10 10 0 11-10-16 8 8 0 0010 16z" stroke="currentColor" stroke-width="1.6"/>`,
+          'runner': `<path d="M7 28h8l5-8 6 4 7-12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`,
+          'shop': `<path d="M9 12h22l-2 16H11L9 12z" stroke="currentColor" stroke-width="1.6"/><path d="M15 12V9a5 5 0 0110 0v3" stroke="currentColor" stroke-width="1.6"/>`,
+          'food': `<rect x="8" y="8" width="24" height="24" rx="5" stroke="currentColor" stroke-width="1.6"/><path d="M14 15h12M14 20h12M14 25h7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
+          'film': `<polygon points="16,12 28,20 16,28" stroke="currentColor" stroke-width="1.6" fill="none"/><rect x="5" y="7" width="30" height="26" rx="4" stroke="currentColor" stroke-width="1.6"/>`,
+          'motion': `<path d="M8 26L17 10l6 10 4-6 5 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>`
+        };
+
+        return `
+          <div class="absolute inset-0 bg-gradient-to-br ${p.fallbackTheme} flex flex-col items-center justify-center p-6">
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(rgba(255,255,255,0.28) 1px, transparent 1px); background-size: 18px 18px;"></div>
+            <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl glass-pill text-white shadow-xl">
+              <svg class="h-9 w-9 text-accent" viewBox="0 0 40 40" fill="none">${icons[p.fallbackIcon] || icons['unity-safety']}</svg>
+            </div>
+            <span class="relative z-10 mt-3 font-mono text-[11px] uppercase tracking-widest text-slate-200/90">${p.catLabel} // ${p.idx}</span>
+          </div>
+        `;
+      }
+
+      const projectsGrid = document.getElementById('projects-grid');
+
+      function renderProjects(filter = 'all') {
+        if (!projectsGrid) return;
+        const list = PROJECTS.map((p, i) => ({ ...p, i })).filter((p) => filter === 'all' || p.cat === filter);
+
+        projectsGrid.innerHTML = list.map((p) => {
+          const span = (filter === 'all' && p.featured) ? 'lg:col-span-6' : 'lg:col-span-4';
+          const imgTag = p.img
+            ? `<img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" onerror="this.style.display='none'" class="relative z-10 h-full w-full object-cover transition duration-700 group-hover:scale-105" />`
+            : '';
+
+          // Glowing glass "Play Video" overlay for embedded YouTube cinema cards
+          const playOverlay = p.youtubeId
+            ? `
+              <div class="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                <span class="inline-flex items-center gap-2 glass-pill rounded-full px-4 py-2 font-heading text-xs font-bold text-white shadow-[0_0_28px_rgba(var(--accent-rgb),0.55)] border-[var(--accent)]/50 transition duration-300 group-hover:scale-110 group-hover:bg-[var(--accent)] group-hover:text-slate-950">
+                  <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24"><polygon points="6,4 20,12 6,20"/></svg>
+                  <span>Play Video</span>
+                </span>
+              </div>
+            `
+            : '';
+
+          const cardCta = p.youtubeId
+            ? `<span class="shrink-0 inline-flex items-center gap-1 rounded-full badge-accent px-2.5 py-1 font-mono text-[11px] font-semibold transition-transform group-hover:scale-105">▶ Play Video</span>`
+            : `<span class="shrink-0 font-heading text-xs font-bold text-accent transition-transform group-hover:translate-x-1">Case Study →</span>`;
+
+          return `
+            <article
+              tabindex="0"
+              role="button"
+              aria-label="${p.youtubeId ? 'Play video and open details for ' : 'Open case study for '}${p.title}"
+              onclick="openCaseModal(${p.i})"
+              onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openCaseModal(${p.i});}"
+              class="glass-card group cursor-pointer ${span} rounded-3xl flex flex-col overflow-hidden focus:outline-none focus:ring-2 focus:ring-[var(--accent)]"
+            >
+              <div class="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-950/60 border-b border-white/10">
+                ${renderGlassFallback(p)}
+                ${imgTag}
+                <div class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#04070d]/85 via-transparent to-black/20"></div>
+                ${playOverlay}
+                <div class="absolute top-3.5 left-3.5 right-3.5 z-20 flex items-center justify-between">
+                  <span class="rounded-xl glass-pill px-2.5 py-1 font-mono text-xs font-semibold text-white">${p.idx}</span>
+                  <span class="rounded-full glass-pill px-3 py-1 font-mono text-[11px] font-medium text-accent">${p.youtubeId ? '▶ ' : ''}${p.catLabel}</span>
+                </div>
+              </div>
+
+              <div class="relative z-10 p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <p class="font-mono text-[11px] text-slate-400">${p.status}</p>
+                  <h3 class="mt-1.5 font-heading text-xl font-bold leading-snug text-white transition group-hover:text-accent">
+                    ${p.title}
+                  </h3>
+                  <p class="mt-2.5 text-sm leading-relaxed text-slate-300 line-clamp-2">
+                    ${p.summary}
+                  </p>
+                </div>
+
+                <div class="mt-5 flex items-center justify-between gap-2 pt-4 border-t border-white/10">
+                  <div class="flex flex-wrap gap-1.5">
+                    ${p.tags.slice(0, 3).map((t) => `<span class="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-0.5 font-mono text-[11px] text-slate-300">${t}</span>`).join('')}
+                  </div>
+                  ${cardCta}
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+
+        bindGlassSpotlights();
+      }
+
+      function setProjectFilter(filter = 'all') {
+        document.querySelectorAll('.proj-filter').forEach((btn) => {
+          const active = btn.dataset.filter === filter;
+          btn.classList.toggle('active', active);
+          btn.classList.toggle('bg-white/15', active);
+          btn.classList.toggle('text-white', active);
+          btn.classList.toggle('text-slate-300', !active);
+        });
+        renderProjects(filter);
+        playGlassSFX('tab');
+      }
+
+      document.querySelectorAll('.proj-filter').forEach((btn) => {
+        btn.addEventListener('click', () => setProjectFilter(btn.dataset.filter));
+      });
+
+      renderProjects('all');
+
+      // Case Study & In-Page Cinema Modal
+      const caseModal = document.getElementById('case-modal');
+
+      window.openCaseModal = function (i) {
+        const p = PROJECTS[i];
+        if (!p || !caseModal) return;
+
+        const mediaEl = document.getElementById('case-media');
+        if (p.youtubeId) {
+          // Responsive 16:9 Frosted Glass Cinema Frame with Embedded YouTube Player
+          mediaEl.className = 'relative w-full bg-black/70 p-3 sm:p-4 border-b border-white/12';
+          mediaEl.innerHTML = `
+            <div class="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/20 bg-black shadow-[0_0_40px_rgba(var(--accent-rgb),0.25)]">
+              <iframe
+                id="case-yt-iframe"
+                src="https://www.youtube.com/embed/${p.youtubeId}?autoplay=1&rel=0&modestbranding=1"
+                title="${p.title} — YouTube Video Player"
+                class="h-full w-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          `;
+        } else {
+          mediaEl.className = 'relative h-56 sm:h-72 w-full overflow-hidden bg-slate-950';
+          mediaEl.innerHTML = `
+            ${renderGlassFallback(p)}
+            ${p.img ? `<img src="${p.img}" alt="${p.title}" loading="lazy" decoding="async" onerror="this.style.display='none'" class="relative z-10 h-full w-full object-cover" />` : ''}
+            <div class="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#04070d] via-transparent to-transparent"></div>
+          `;
+        }
+
+        document.getElementById('case-idx').textContent = p.idx;
+        document.getElementById('case-cat').textContent = p.catLabel;
+        document.getElementById('case-status').textContent = p.status;
+        document.getElementById('case-title').textContent = p.title;
+        document.getElementById('case-role').textContent = p.role;
+        document.getElementById('case-challenge').textContent = p.challenge;
+        document.getElementById('case-highlights').innerHTML = p.highlights
+          .map((h) => `<li class="flex items-start gap-2.5"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"></span><span>${h}</span></li>`)
+          .join('');
+        document.getElementById('case-tags').innerHTML = p.tags
+          .map((t) => `<span class="rounded-xl badge-accent px-3 py-1 font-mono text-xs">${t}</span>`)
+          .join('');
+
+        const act = document.getElementById('case-action');
+        if (p.youtubeId && p.link) {
+          // Subtle secondary fallback link since video already plays directly in-page
+          act.href = p.link;
+          act.target = '_blank';
+          act.rel = 'noreferrer';
+          act.className = 'inline-flex items-center gap-2 rounded-2xl border border-white/18 bg-white/[0.06] px-5 py-3 font-mono text-xs font-semibold text-slate-200 transition hover:border-[var(--accent)]/60 hover:text-accent';
+          act.textContent = 'Open on YouTube ↗';
+        } else if (p.link) {
+          act.href = p.link;
+          act.target = '_blank';
+          act.rel = 'noreferrer';
+          act.className = 'inline-flex items-center gap-2 rounded-2xl bg-accent-glow px-5 py-3 font-heading text-xs font-bold text-slate-950';
+          act.textContent = 'Visit Project ↗';
+        } else {
+          act.href = `mailto:ahmadafiq1506@gmail.com?subject=${encodeURIComponent('Inquiry: ' + p.title)}`;
+          act.removeAttribute('target');
+          act.className = 'inline-flex items-center gap-2 rounded-2xl bg-accent-glow px-5 py-3 font-heading text-xs font-bold text-slate-950';
+          act.textContent = 'Inquire via Email ↗';
+        }
+
+        playGlassSFX('modal');
+        caseModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      };
+
+      function closeCaseModal() {
+        // Immediately stop any embedded YouTube video playback before closing
+        const mediaEl = document.getElementById('case-media');
+        const ytIframe = document.getElementById('case-yt-iframe');
+        if (ytIframe) {
+          ytIframe.src = '';
+        }
+        if (mediaEl) {
+          mediaEl.innerHTML = '';
+        }
+        caseModal?.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+      document.getElementById('case-close')?.addEventListener('click', closeCaseModal);
+      document.getElementById('case-close-2')?.addEventListener('click', closeCaseModal);
+      caseModal?.addEventListener('click', (e) => { if (e.target === caseModal) closeCaseModal(); });
+
+      /* -----------------------------------------------------------------------
+         9. COMMAND PALETTE (STRICTLY CTRL + K + FULL KEYBOARD NAVIGATION)
+         ----------------------------------------------------------------------- */
+      const cmdModal = document.getElementById('cmd-modal');
+      const cmdInput = document.getElementById('cmd-input');
+      const cmdList = document.getElementById('cmd-list');
+      let cmdMatches = [];
+      let cmdActiveIdx = 0;
+
+      const COMMANDS = [
+        { label: 'Jump to Hero & Developer Lab', group: 'Navigate', run: () => location.hash = '#home' },
+        { label: 'Launch Mini-Game: Cyber Orb Reflex', group: 'Lab', run: () => { location.hash = '#home'; switchLabTab('game'); } },
+        { label: 'Open Lab: Unity 6 Safety Inspector', group: 'Lab', run: () => { location.hash = '#home'; switchLabTab('unity'); } },
+        { label: 'Open Lab: Interactive Terminal', group: 'Lab', run: () => { location.hash = '#home'; switchLabTab('terminal'); } },
+        { label: 'Jump to About & Studio Portrait', group: 'Navigate', run: () => location.hash = '#about' },
+        { label: 'Jump to Experience & Journey', group: 'Navigate', run: () => location.hash = '#journey' },
+        { label: 'Jump to Selected Projects', group: 'Navigate', run: () => location.hash = '#projects' },
+        { label: 'Jump to Technical Skills', group: 'Navigate', run: () => location.hash = '#skills' },
+        { label: 'Jump to Education (BITE · UTeM)', group: 'Navigate', run: () => location.hash = '#education' },
+        { label: 'Jump to Contact Hub', group: 'Navigate', run: () => location.hash = '#contact' },
+        { label: 'Filter Projects: Web & Systems', group: 'Projects', run: () => { setProjectFilter('web'); location.hash = '#projects'; } },
+        { label: 'Filter Projects: Unity & Games', group: 'Projects', run: () => { setProjectFilter('game'); location.hash = '#projects'; } },
+        { label: 'Filter Projects: Video & Motion', group: 'Projects', run: () => { setProjectFilter('motion'); location.hash = '#projects'; } },
+        { label: 'Filter Projects: All (10)', group: 'Projects', run: () => { setProjectFilter('all'); location.hash = '#projects'; } },
+        { label: 'Switch Theme: Glacier Cyan', group: 'Theme', run: () => applyTheme('glacier', true) },
+        { label: 'Switch Theme: Nebula Violet', group: 'Theme', run: () => applyTheme('nebula', true) },
+        { label: 'Switch Theme: Emerald Prism', group: 'Theme', run: () => applyTheme('emerald', true) },
+        { label: 'Toggle Spatial Glass SFX', group: 'Audio', run: toggleSFX },
+        { label: 'Copy Email (ahmadafiq1506@gmail.com)', group: 'Action', run: copyEmail },
+        { label: 'Open Resume PDF', group: 'External', run: () => window.open('Ahmad_Afiq_CV.pdf', '_blank', 'noreferrer') }
+      ];
+
+      function highlightCmdItem() {
+        const items = cmdList?.querySelectorAll('.cmd-item') || [];
+        items.forEach((el, idx) => {
+          const active = idx === cmdActiveIdx;
+          el.classList.toggle('bg-white/12', active);
+          el.classList.toggle('text-white', active);
+          el.classList.toggle('border', active);
+          el.classList.toggle('border-[var(--accent)]/40', active);
+          if (active) el.scrollIntoView({ block: 'nearest' });
+        });
+      }
+
+      function renderCommands(q = '') {
+        if (!cmdList) return;
+        const query = q.trim().toLowerCase();
+        cmdMatches = COMMANDS.filter((c) => !query || c.label.toLowerCase().includes(query) || c.group.toLowerCase().includes(query));
+        cmdActiveIdx = 0;
+
+        if (!cmdMatches.length) {
+          cmdList.innerHTML = `<p class="p-4 text-center font-mono text-xs text-slate-400">No matching commands found.</p>`;
+          return;
+        }
+
+        cmdList.innerHTML = cmdMatches.map((c, idx) => `
+          <button type="button" data-cmd-idx="${idx}" class="cmd-item w-full flex items-center justify-between rounded-2xl px-4 py-3 text-left text-sm text-slate-200 transition hover:bg-white/10 hover:text-white">
+            <span>${c.label}</span>
+            <span class="rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-0.5 font-mono text-[11px] text-accent">${c.group}</span>
+          </button>
+        `).join('');
+
+        cmdList.querySelectorAll('.cmd-item').forEach((btn, idx) => {
+          btn.addEventListener('mouseenter', () => {
+            cmdActiveIdx = idx;
+            highlightCmdItem();
+          });
+          btn.addEventListener('click', () => {
+            closeCmdModal();
+            cmdMatches[idx].run();
+          });
+        });
+        highlightCmdItem();
+      }
+
+      function openCmdModal() {
+        if (!cmdModal) return;
+        playGlassSFX('modal');
+        cmdModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        if (cmdInput) {
+          cmdInput.value = '';
+          renderCommands('');
+          window.setTimeout(() => cmdInput.focus(), 55);
+        }
+      }
+
+      function closeCmdModal() {
+        cmdModal?.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('cmd-open-btn')?.addEventListener('click', openCmdModal);
+      document.getElementById('hero-cmd-trigger')?.addEventListener('click', openCmdModal);
+      document.getElementById('dock-cmd-btn')?.addEventListener('click', openCmdModal);
+      document.getElementById('mobile-cmd-btn')?.addEventListener('click', () => {
+        setMobileDrawer(false);
+        openCmdModal();
+      });
+      cmdInput?.addEventListener('input', (e) => renderCommands(e.target.value));
+      cmdModal?.addEventListener('click', (e) => { if (e.target === cmdModal) closeCmdModal(); });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          cmdModal?.classList.contains('is-open') ? closeCmdModal() : openCmdModal();
+          return;
+        }
+        if (e.key === 'Escape') {
+          closeCaseModal();
+          closeCmdModal();
+          return;
+        }
+        if (cmdModal?.classList.contains('is-open') && cmdMatches.length) {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            cmdActiveIdx = (cmdActiveIdx + 1) % cmdMatches.length;
+            highlightCmdItem();
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            cmdActiveIdx = (cmdActiveIdx - 1 + cmdMatches.length) % cmdMatches.length;
+            highlightCmdItem();
+          } else if (e.key === 'Enter') {
+            e.preventDefault();
+            const chosen = cmdMatches[cmdActiveIdx];
+            if (chosen) {
+              closeCmdModal();
+              chosen.run();
+            }
+          }
+        }
+      });
+
+      /* -----------------------------------------------------------------------
+         10. SPOTLIGHTS, COUNTERS, SKILL BARS, VISIONOS DOCK & SCROLL LOGIC
+         ----------------------------------------------------------------------- */
+      function bindGlassSpotlights() {
+        document.querySelectorAll('.glass-card').forEach((card) => {
+          if (card.dataset.spBound) return;
+          card.dataset.spBound = 'true';
+          card.addEventListener('mousemove', (e) => {
+            const r = card.getBoundingClientRect();
+            const px = e.clientX - r.left;
+            const py = e.clientY - r.top;
+            card.style.setProperty('--mx', `${px}px`);
+            card.style.setProperty('--my', `${py}px`);
+
+            if (finePointer && !reduceMotion && card.id !== 'portrait-card') {
+              const rx = ((0.5 - py / r.height) * 3.2).toFixed(2);
+              const ry = ((px / r.width - 0.5) * 3.2).toFixed(2);
+              card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+            }
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+          });
+        });
+      }
+      bindGlassSpotlights();
+
+      // Animated Stat Counters
+      const counterEls = document.querySelectorAll('[data-count]');
+      function animateCounter(el) {
+        const target = Number(el.dataset.count);
+        if (reduceMotion) { el.textContent = String(target); return; }
+        const start = performance.now();
+        const dur = 1100;
+        function step(now) {
+          const p = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = String(Math.round(target * eased));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      if ('IntersectionObserver' in window && counterEls.length) {
+        const cio = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              animateCounter(en.target);
+              cio.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        counterEls.forEach((el) => cio.observe(el));
+      } else {
+        counterEls.forEach((el) => { el.textContent = el.dataset.count; });
+      }
+
+      // Animated Skill Proficiency Bars
+      const skillFills = document.querySelectorAll('.skill-fill');
+      if ('IntersectionObserver' in window && skillFills.length) {
+        const sio = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              en.target.style.width = en.target.dataset.level || '85%';
+              sio.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.35 });
+        skillFills.forEach((el) => sio.observe(el));
+      } else {
+        skillFills.forEach((el) => { el.style.width = el.dataset.level || '85%'; });
+      }
+
+      // Mobile drawer
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const burgerOpen = document.getElementById('burger-open');
+      const burgerClose = document.getElementById('burger-close');
+
+      function setMobileDrawer(open) {
+        mobileDrawer?.classList.toggle('hidden', !open);
+        burgerOpen?.classList.toggle('hidden', open);
+        burgerClose?.classList.toggle('hidden', !open);
+        mobileToggle?.setAttribute('aria-expanded', String(open));
+      }
+      mobileToggle?.addEventListener('click', () => setMobileDrawer(mobileDrawer?.classList.contains('hidden')));
+      document.querySelectorAll('.mobile-link').forEach((a) => a.addEventListener('click', () => setMobileDrawer(false)));
+
+      // Scroll progress, active nav pill, VisionOS bottom dock & timeline progress rail
+      const scrollBar = document.getElementById('scroll-bar');
+      const visionDock = document.getElementById('vision-dock');
+      const timelineWrap = document.getElementById('timeline-wrap');
+      const timelineProgress = document.getElementById('timeline-progress');
+      const navPills = document.querySelectorAll('[data-nav]');
+      const navSections = [...navPills].map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+      function handleScroll() {
+        const st = window.scrollY;
+        const dh = document.documentElement.scrollHeight - window.innerHeight;
+        if (scrollBar) scrollBar.style.width = `${dh > 0 ? Math.min(100, (st / dh) * 100) : 0}%`;
+
+        // VisionOS Bottom Floating Dock visibility
+        if (visionDock) {
+          visionDock.classList.toggle('is-visible', st > 420);
+        }
+
+        // Timeline glowing rail progress
+        if (timelineWrap && timelineProgress) {
+          const rect = timelineWrap.getBoundingClientRect();
+          const vh = window.innerHeight;
+          const pct = Math.max(0, Math.min(100, ((vh * 0.68 - rect.top) / rect.height) * 100));
+          timelineProgress.style.height = `${pct.toFixed(1)}%`;
+        }
+
+        let current = navSections[0] || null;
+        for (const sec of navSections) {
+          if (st >= sec.offsetTop - 220) current = sec;
+        }
+        navPills.forEach((a) => {
+          const active = current && a.getAttribute('href') === `#${current.id}`;
+          a.classList.toggle('bg-white/15', Boolean(active));
+          a.classList.toggle('text-white', Boolean(active));
+          a.classList.toggle('text-slate-300', !active);
+        });
+      }
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // Scroll Reveal
+      const reveals = document.querySelectorAll('[data-reveal]');
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        reveals.forEach((el) => el.classList.add('is-visible'));
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              en.target.classList.add('is-visible');
+              io.unobserve(en.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+        reveals.forEach((el) => io.observe(el));
+      }
+    })();
+  </script>
+</body>
+</html>
